@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const StyledFooter = styled.div``
+const FooterLogos = styled.div``
+const LogoContainer = styled.div``
 
 const Footer = () => {
   return (
