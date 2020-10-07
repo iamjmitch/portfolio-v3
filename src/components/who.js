@@ -6,13 +6,45 @@ import AvatarSrc from "../images/avatar.png"
 const Who = styled.div`
   width: 100%;
   background: #151515;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
-const AvatarContainer = styled.div``
+const AvatarContainer = styled.div`
+  background: #ff1212;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  border-radius: 50%;
+  padding: 10px 10px 0 10px;
+`
 
-const Avatar = styled.img``
+const Avatar = styled.img`
+  min-width: 100%;
+  max-height: auto;
+  object-fit: contain;
+  transform: rotate(-5deg);
+  margin-top: 2px;
+  margin-left: -5px;
+`
 
-const AvatarText = styled.div``
+const AvatarText = styled.div`
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  max-width: 600px;
+  h4 {
+    color: #ff1212;
+    padding: 20px 0;
+    font-weight: 600;
+  }
+  p {
+    color: white;
+  }
+`
 
 const who = () => {
   return (
@@ -32,3 +64,4 @@ const who = () => {
     </Who>
   )
 }
+export default who
