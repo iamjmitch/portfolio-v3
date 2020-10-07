@@ -36,13 +36,15 @@ const Span = styled.span`
 
 const HeroContent = styled.div`
   text-align: left;
+  display: flex;
+  flex-direction: column;
   h1 {
     font-size: 5em;
     line-height: 76px;
 
   }
   h2 {
-    font-size: 3.5em;
+    font-size: 3.5em; 
     line-height: 65px;
     padding-top: 10px;
     b {

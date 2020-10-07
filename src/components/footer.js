@@ -2,9 +2,47 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const StyledFooter = styled.div``
-const FooterLogos = styled.div``
-const LogoContainer = styled.div``
+import GatsbyLogo from "../images/gatsbyLogo.svg"
+import IamjmitchLogo from "../images/logo.svg"
+
+const StyledFooter = styled.div`
+  padding: 30px 0;
+  color: white;
+  font-family: "Poppins", sans-serif;
+`
+
+const SubText = styled.p`
+  font-size: 0.7rem;
+  text-align: center;
+  opacity: 0.6;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+`
+const FooterLogos = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+`
+const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  margin: 0 30px;
+  opacity: 0.6;
+  p {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  svg {
+    width: 200px;
+    max-height: 35px;
+    display: block;
+  }
+`
 
 const Footer = () => {
   return (
@@ -12,13 +50,20 @@ const Footer = () => {
       <FooterLogos>
         <LogoContainer>
           <p>DESIGNED AND DEVLOPED BY</p>
-          <img src={iamjmitchLogo} />
+          <IamjmitchLogo />
         </LogoContainer>
         <LogoContainer>
           <p>CODED IN</p>
-          <img src={gatsbyLogo} />
+          <GatsbyLogo />
         </LogoContainer>
       </FooterLogos>
+      <SubText>COPYRIGHT © 2020 JAMES MITCHELL</SubText>
+      <SubText>
+        “Bitmoji Sticker” USED UNDER “PERSONAL USE” LICENCE. CREATE YOURS{" "}
+        <a href="https://www.bitmoji.com/" target="_blank">
+          HERE
+        </a>
+      </SubText>
     </StyledFooter>
   )
 }
