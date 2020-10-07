@@ -6,7 +6,7 @@ import AvatarSrc from "../images/avatar.png"
 const Who = styled.div`
   width: 100%;
   background: #151515;
-  padding: 50px 0;
+  padding: 60px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,21 +28,25 @@ const Avatar = styled.img`
   max-height: auto;
   object-fit: contain;
   transform: rotate(-5deg);
-  margin-top: 2px;
+
   margin-left: -5px;
 `
 
 const AvatarText = styled.div`
   text-align: center;
   font-family: "Poppins", sans-serif;
-  max-width: 600px;
+  max-width: 80%;
   h4 {
     color: #ff1212;
-    padding: 20px 0;
+    padding: 25px 0 10px;
     font-weight: 600;
   }
   p {
     color: white;
+    font-weight: 400;
+  }
+  .spaced {
+    padding-bottom: 10px;
   }
 `
 
@@ -54,11 +58,13 @@ const who = () => {
       </AvatarContainer>
       <AvatarText>
         <h4>WHO ON EARTH IS THIS GUY?</h4>
-        <p>I’m James and im a Junior Web Developer from Brisbane, Australia.</p>
+        <p className="spaced">
+          I’m James and im a Junior Web Developer from Brisbane, Australia.
+        </p>
         <p>
           Most of my projects have been porfolio peices along with a few
-          commercial ones, I’m eager to learn and am ready to have my mind
-          moulded.
+          commercial ones. <br></br> I am eager to learn and ready to further
+          advance my knowledge
         </p>
       </AvatarText>
     </Who>

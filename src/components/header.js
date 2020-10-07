@@ -7,7 +7,6 @@ import Hamburger from "../images/hamburger.svg"
 
 const NavContainer = styled.div`
   margin-top: 15px;
-
   display: flex;
   justify-content: space-between;
   background: transparent;
