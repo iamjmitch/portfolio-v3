@@ -4,10 +4,10 @@ import styled from "styled-components"
 const Box = styled.div`
   background: #151515;
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   padding: 10px;
-  transition: 0.3s;
+  transition: all 0.1s linear;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,11 +21,14 @@ const Box = styled.div`
   }
   p {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
+    position: absolute;
+    transition: all 0.2s linear;
   }
   img {
     width: 50%;
+    transition: all 0.2s linear;
   }
 `
 
@@ -36,8 +39,13 @@ const TechBox = props => {
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <img src={props.imageSrc} />
-      {hover === true && <p>{props.hoverText}</p>}
+      <img
+        style={!hover ? { opacity: "1" } : { opacity: "0" }}
+        src={props.imageSrc}
+      />
+      <p style={!hover ? { opacity: "0" } : { opacity: "1" }}>
+        {props.hoverText}
+      </p>
     </Box>
   )
 }

@@ -5,7 +5,8 @@ import "../styles/index.css"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Who from "../components/who"
-import Tech from "../components/technologies"
+import Tech from "../components/technologies/technologies"
+import Portfolio from "../components/portfolio/portfolio"
 
 const indexPage = () => {
   return (
@@ -14,6 +15,7 @@ const indexPage = () => {
         <Hero />
         <Who />
         <Tech />
+        <Portfolio />
       </Layout>
     </div>
   )

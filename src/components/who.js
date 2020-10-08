@@ -6,7 +6,7 @@ import AvatarSrc from "../images/avatar.png"
 const Who = styled.div`
   width: 100%;
   background: #151515;
-  padding: 60px 0;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

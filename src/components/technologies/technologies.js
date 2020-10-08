@@ -2,17 +2,18 @@ import React from "react"
 import styled from "styled-components"
 
 import Techbox from "./techBox"
-import svelteLogo from "../images/tech/svelte.svg"
+import TechboxHeader from "./techBoxHeader"
+import TechboxFooter from "./techBoxFooter"
 
 const TechContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 0;
+  padding: 100px 0;
 `
 
 const BoxContainer = styled.div`
-  width: 850px;
+  width: 700px;
   display: flex;
   flex-wrap: wrap;
 `
@@ -21,14 +22,7 @@ const tech = () => {
   return (
     <TechContainer>
       <BoxContainer>
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://www.php.net/images/logos/new-php-logo.svg"
-          hoverText="php"
-        />
+        <TechboxHeader />
         <Techbox
           imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
           hoverText="Svelte"
@@ -81,10 +75,9 @@ const tech = () => {
           imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
           hoverText="Svelte"
         />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
+        {/* <a href="https://github.com/iamjmitch" target="_blank"> */}
+        <TechboxFooter />
+        {/* </a> */}
       </BoxContainer>
     </TechContainer>
   )
