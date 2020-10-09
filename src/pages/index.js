@@ -17,7 +17,7 @@ const indexPage = () => {
         <Who />
         <Tech />
         <Portfolio />
-        <Contact act="https://www.flexyform.com/f/54d3643e2be164a1f6bc534b8721d3ae6a2f34c3" />
+        <Contact />
       </Layout>
     </div>
   )
