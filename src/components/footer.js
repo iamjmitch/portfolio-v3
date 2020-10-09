@@ -53,7 +53,7 @@ const Footer = () => {
           <IamjmitchLogo />
         </LogoContainer>
         <LogoContainer>
-          <p>CODED IN</p>
+          <p>BUILT WITH</p>
           <GatsbyLogo />
         </LogoContainer>
       </FooterLogos>

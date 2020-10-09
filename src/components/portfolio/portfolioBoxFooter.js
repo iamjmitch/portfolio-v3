@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const Box = styled.div`
@@ -13,6 +13,9 @@ const Box = styled.div`
   justify-content: center;
   text-transform: uppercase;
   margin: 10px;
+  &:hover {
+    background: #262626;
+  }
 
   p {
     display: block;
@@ -28,7 +31,7 @@ const Box = styled.div`
   }
 `
 
-const portfolioBoxFooter = props => {
+const PortfolioBoxFooter = props => {
   return (
     <Box>
       <p>
@@ -39,4 +42,4 @@ const portfolioBoxFooter = props => {
   )
 }
 
-export default portfolioBoxFooter
+export default PortfolioBoxFooter
