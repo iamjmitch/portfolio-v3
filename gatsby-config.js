@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -19,6 +23,17 @@ module.exports = {
       options: {
         fonts: [`Poppins:ital,wght@0,700;0,800;1,600;1,700`],
         display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
+        accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
+        schemas: {
+          who: require("./src/schemas/who.json"),
+          // tech: require("./src/schemas/tech.json"),
+        },
       },
     },
     {

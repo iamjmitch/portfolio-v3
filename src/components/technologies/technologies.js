@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Techbox from "./techBox"
 import TechboxHeader from "./techBoxHeader"
@@ -18,63 +19,44 @@ const BoxContainer = styled.div`
   flex-wrap: wrap;
 `
 
-const tech = () => {
+const Tech = () => {
+  const data = useStaticQuery(graphql`
+    query tech {
+      allPrismicTech(
+        sort: { fields: [data___order_number], order: [ASC, DESC] }
+      ) {
+        edges {
+          node {
+            id
+            data {
+              hover_text {
+                text
+              }
+              logo {
+                alt
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(data)
+
   return (
     <TechContainer>
       <BoxContainer>
         <TechboxHeader />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
-        <Techbox
-          imageSrc="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
-          hoverText="Svelte"
-        />
+
+        {data.allPrismicTech.edges.map(({ node }, i) => (
+          <Techbox
+            imageSrc={node.data.logo.url}
+            alt={node.data.logo.alt}
+            hoverText={node.data.hover_text[0].text}
+          />
+        ))}
         {/* <a href="https://github.com/iamjmitch" target="_blank"> */}
         <TechboxFooter />
         {/* </a> */}
@@ -83,4 +65,4 @@ const tech = () => {
   )
 }
 
-export default tech
+export default Tech

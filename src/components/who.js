@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 
 import AvatarSrc from "../images/avatar.png"
 
-const Who = styled.div`
+const WhoContainer = styled.div`
   width: 100%;
   background: #151515;
   padding: 100px 0;
@@ -44,30 +45,45 @@ const AvatarText = styled.div`
   p {
     color: white;
     font-weight: 400;
-  }
-  .spaced {
-    padding-bottom: 10px;
+    white-space: pre-wrap;
   }
 `
 
-const who = () => {
+const Who = () => {
+  const data = useStaticQuery(graphql`
+    query blurb {
+      allPrismicAboutBlurb {
+        nodes {
+          data {
+            avatar {
+              url
+            }
+            blurb {
+              text
+            }
+            burb_heading {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const heading = data.allPrismicAboutBlurb.nodes[0].data.burb_heading[0].text
+  const avatarURL = data.allPrismicAboutBlurb.nodes[0].data.avatar.url
+  const blurb = data.allPrismicAboutBlurb.nodes[0].data.blurb[0].text
+
   return (
-    <Who>
+    <WhoContainer>
       <AvatarContainer>
-        <Avatar src={AvatarSrc} />
+        <Avatar src={avatarURL} alt="Avatar" />
       </AvatarContainer>
       <AvatarText>
-        <h4>WHO ON EARTH IS THIS GUY?</h4>
-        <p className="spaced">
-          I’m James and im a Junior Web Developer from Brisbane, Australia.
-        </p>
-        <p>
-          Most of my projects have been porfolio peices along with a few
-          commercial ones. <br></br> I am eager to learn and ready to further
-          advance my knowledge
-        </p>
+        <h4>{heading}</h4>
+        <p> {blurb}</p>
       </AvatarText>
-    </Who>
+    </WhoContainer>
   )
 }
-export default who
+export default Who

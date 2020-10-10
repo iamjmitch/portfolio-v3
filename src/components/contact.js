@@ -41,7 +41,7 @@ const ContactForm = props => {
         <input type="hidden" name="form-name" value="contact" />
         <div>
           <label>Name*</label>
-          <input type="text" name="fullname" required />
+          <input type="text" name="name" required />
         </div>
         <div>
           <label>Email*</label>

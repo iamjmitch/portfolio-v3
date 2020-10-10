@@ -13,6 +13,7 @@ const Box = styled.div`
   justify-content: center;
   text-transform: uppercase;
   margin: 10px;
+  transition: 0.3s;
   &:hover {
     background: #262626;
   }
