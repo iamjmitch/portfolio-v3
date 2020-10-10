@@ -35,7 +35,7 @@ const ContactForm = props => {
         netlify-honeypot="bot-field"
         data-netlify="true"
         name="contact"
-        action="/sent"
+        action="/?MessageSuccess"
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
