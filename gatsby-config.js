@@ -32,7 +32,6 @@ module.exports = {
         accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
         schemas: {
           who: require("./src/schemas/who.json"),
-          // tech: require("./src/schemas/tech.json"),
         },
       },
     },
