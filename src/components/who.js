@@ -2,8 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
-import AvatarSrc from "../images/avatar.png"
-
 const WhoContainer = styled.div`
   width: 100%;
   background: #151515;

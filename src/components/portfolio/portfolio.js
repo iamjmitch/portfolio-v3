@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import Portfoliobox from "./portfolioBox"
 import PortfolioboxHeader from "./portfolioBoxHeader"
 import PortfolioboxFooter from "./portfolioBoxFooter"
-import { getSupportInfo } from "prettier"
 
 const PortfolioContainer = styled.div`
   display: flex;

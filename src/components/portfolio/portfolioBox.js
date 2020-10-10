@@ -68,7 +68,7 @@ const WebsiteBlurb = props => {
     <Websitebox style={!props.hover ? { opacity: "0" } : { opacity: "1" }}>
       <h5>{props.websiteTitle}</h5>
       <p>{props.blurb}</p>
-      <a href={props.link} target="_blank">
+      <a href={props.link} rel="noreferrer" target="_blank">
         <button>Visit Site</button>
       </a>
     </Websitebox>
@@ -84,6 +84,7 @@ const TechBox = props => {
       <img
         style={!hover ? { opacity: "1" } : { opacity: "0" }}
         src={props.imageSrc}
+        alt="website"
       />
       <WebsiteBlurb
         websiteTitle={props.websiteTitle}
