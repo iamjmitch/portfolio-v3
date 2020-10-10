@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import GatsbyLogo from "../images/gatsbyLogo.svg"
 import IamjmitchLogo from "../images/logo.svg"
+import PrismicLogo from "../images/prismic.svg"
 
 const StyledFooter = styled.div`
   padding: 30px 0;
@@ -36,6 +37,7 @@ const LogoContainer = styled.div`
   p {
     font-size: 0.7rem;
     font-weight: 500;
+    padding-bottom: 3px;
   }
   svg {
     width: 200px;
@@ -55,6 +57,10 @@ const Footer = () => {
         <LogoContainer>
           <p>BUILT WITH</p>
           <GatsbyLogo />
+        </LogoContainer>
+        <LogoContainer>
+          <p>MANAGED WITH</p>
+          <PrismicLogo />
         </LogoContainer>
       </FooterLogos>
       <SubText>COPYRIGHT © 2020 JAMES MITCHELL</SubText>
