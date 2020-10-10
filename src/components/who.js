@@ -53,16 +53,18 @@ const Who = () => {
   const data = useStaticQuery(graphql`
     query blurb {
       allPrismicAboutBlurb {
-        nodes {
-          data {
-            avatar {
-              url
-            }
-            blurb {
-              text
-            }
-            burb_heading {
-              text
+        edges {
+          node {
+            data {
+              blurb_heading {
+                text
+              }
+              blurb {
+                text
+              }
+              avatar {
+                url
+              }
             }
           }
         }
@@ -70,9 +72,10 @@ const Who = () => {
     }
   `)
 
-  const heading = data.allPrismicAboutBlurb.nodes[0].data.burb_heading[0].text
-  const avatarURL = data.allPrismicAboutBlurb.nodes[0].data.avatar.url
-  const blurb = data.allPrismicAboutBlurb.nodes[0].data.blurb[0].text
+  const heading =
+    data.allPrismicAboutBlurb.edges[0].node.data.blurb_heading.text
+  const avatarURL = data.allPrismicAboutBlurb.edges[0].node.data.avatar.url
+  const blurb = data.allPrismicAboutBlurb.edges[0].node.data.blurb.text
 
   return (
     <WhoContainer>

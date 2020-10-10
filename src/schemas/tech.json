@@ -8,14 +8,14 @@
         "label": "logo"
       }
     },
-    "hover-text": {
+    "hover_text": {
       "type": "StructuredText",
       "config": {
         "single": "paragraph",
         "label": "hover_text"
       }
     },
-    "order-number": {
+    "order_number": {
       "type": "Number",
       "config": {
         "label": "order_number"

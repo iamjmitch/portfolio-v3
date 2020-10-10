@@ -54,7 +54,7 @@ const Tech = () => {
           <Techbox
             imageSrc={node.data.logo.url}
             alt={node.data.logo.alt}
-            hoverText={node.data.hover_text[0].text}
+            hoverText={node.data.hover_text.text}
           />
         ))}
         {/* <a href="https://github.com/iamjmitch" target="_blank"> */}
