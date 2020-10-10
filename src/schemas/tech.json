@@ -1,0 +1,25 @@
+{
+  "Main": {
+    "logo": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "logo"
+      }
+    },
+    "hover-text": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "hover_text"
+      }
+    },
+    "order-number": {
+      "type": "Number",
+      "config": {
+        "label": "order_number"
+      }
+    }
+  }
+}

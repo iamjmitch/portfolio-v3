@@ -25,13 +25,15 @@ module.exports = {
         display: "swap",
       },
     },
+
     {
-      resolve: `gatsby-source-prismic`,
+      resolve: "gatsby-source-prismic",
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
         schemas: {
-          who: require("./src/schemas/who.json"),
+          about_blurb: require("./src/schemas/about_blurb.json"),
+          tech: require("./src/schemas/tech.json"),
         },
       },
     },
