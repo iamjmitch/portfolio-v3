@@ -19,14 +19,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Poppins:ital,wght@0,700;0,800;1,600;1,700`],
-        display: "swap",
-      },
-    },
-
-    {
       resolve: "gatsby-source-prismic",
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
@@ -35,6 +27,13 @@ module.exports = {
           about_blurb: require("./src/schemas/about_blurb.json"),
           tech: require("./src/schemas/tech.json"),
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Poppins:ital,wght@0,700;0,800;1,600;1,700`],
+        display: "swap",
       },
     },
     {
