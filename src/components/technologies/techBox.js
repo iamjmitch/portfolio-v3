@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const BoxContainer = styled.div`
@@ -8,8 +8,14 @@ const BoxContainer = styled.div`
   box-sizing: content-box;
   cursor: pointer;
   &:hover div {
-    background: #fc2602;
+    // background: #fc2602;
     border-radius: 50%;
+    p {
+      opacity: 1;
+    }
+    img {
+      opacity: 0;
+    }
   }
 `
 
@@ -19,45 +25,40 @@ const Box = styled.div`
   width: 100%;
   height: 100%;
   padding: 10px;
-  transition: all 0.1s linear;
+  transition: 0.2s linear;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
+  overflow: hidden;
 
   p {
-    color: white;
+    max-width: 120px;
+    color: #fc2602;
     font-size: 1rem;
     font-weight: 500;
     position: absolute;
     transition: all 0.2s linear;
     text-align: center;
+    line-height: 1.2rem;
+    padding: 0 10px;
+
+    opacity: 0;
   }
   img {
     min-width: 50%;
-    max-width: 50%;
-    max-height: 60%;
+    max-width: 55%;
+    max-height: 55%;
     transition: all 0.2s linear;
   }
 `
 
 const TechBox = props => {
-  const [hover, setHover] = useState(false)
   return (
-    <BoxContainer
-      onMouseOver={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
+    <BoxContainer>
       <Box>
-        <img
-          style={!hover ? { opacity: "1" } : { opacity: "0" }}
-          src={props.imageSrc}
-          alt={props.alt}
-        />
-        <p style={!hover ? { opacity: "0" } : { opacity: "1" }}>
-          {props.hoverText}
-        </p>
+        <img src={props.imageSrc} alt={props.alt} />
+        <p>{props.hoverText}</p>
       </Box>
     </BoxContainer>
   )
