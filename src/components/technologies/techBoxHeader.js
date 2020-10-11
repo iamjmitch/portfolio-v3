@@ -29,7 +29,7 @@ const TechBoxHeader = props => {
   return (
     <Box>
       <p>
-        changes to techboxes Current<br></br>Tech<br></br> Stack
+        Current<br></br>Tech<br></br> Stack
       </p>
     </Box>
   )
