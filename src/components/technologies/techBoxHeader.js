@@ -29,7 +29,7 @@ const TechBoxHeader = props => {
   return (
     <Box>
       <p>
-        Languages <br></br> & <br></br>Frameworks
+        changes to techboxes Current<br></br>Tech<br></br> Stack
       </p>
     </Box>
   )
