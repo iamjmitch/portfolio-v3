@@ -29,6 +29,7 @@ module.exports = {
         },
       },
     },
+
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -36,6 +37,7 @@ module.exports = {
         display: "swap",
       },
     },
+
     {
       resolve: `gatsby-plugin-force-file-loader`,
       options: {
