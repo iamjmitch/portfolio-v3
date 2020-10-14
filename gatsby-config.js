@@ -1,6 +1,7 @@
-require("dotenv").config({
-  path: `.env`,
-})
+const dotenv = require("dotenv")
+dotenv.config()
+
+const { githubApiQuery } = require("./github-api")
 
 module.exports = {
   siteMetadata: {
@@ -9,6 +10,17 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        url: "https://api.github.com/graphql",
+        token: process.env.GATSBY_GITHUB_ACCESS,
+        graphQLQuery: githubApiQuery,
+        variables: {
+          github_login: process.env.GATSBY_GITHUB_LOGIN,
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-svg`,
     {
@@ -48,6 +60,7 @@ module.exports = {
         ],
       },
     },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,

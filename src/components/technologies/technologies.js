@@ -43,8 +43,6 @@ const Tech = () => {
     }
   `)
 
-  console.log(data)
-
   return (
     <TechContainer>
       <BoxContainer>
@@ -55,6 +53,7 @@ const Tech = () => {
             imageSrc={node.data.logo.url}
             alt={node.data.logo.alt}
             hoverText={node.data.hover_text.text}
+            key={node.data.hover_text.text}
           />
         ))}
         {/* <a href="https://github.com/iamjmitch" target="_blank"> */}

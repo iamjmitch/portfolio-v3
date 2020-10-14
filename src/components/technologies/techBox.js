@@ -56,7 +56,7 @@ const Box = styled.div`
 const TechBox = props => {
   return (
     <BoxContainer>
-      <Box>
+      <Box key={props.hoverText}>
         <img src={props.imageSrc} alt={props.alt} />
         <p>{props.hoverText}</p>
       </Box>
