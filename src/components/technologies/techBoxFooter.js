@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
 
 import axios from "axios"
 
@@ -35,9 +36,12 @@ const Box = styled.div`
   }
 `
 
+// This component technically renders the values twice. the useEffect checks Live github repo count and changes the output to the live value.
+// repoCount is queried at gatsby build to create a layer of fallback incase the live .get fails and the staic value at build time is displayed unless overridden by the useEffect
 const TechBoxFooter = () => {
   const [githubData, setGithubData] = useState({})
-  // This will be called on component mount
+
+  // This will be called on component mount and provides live updating to the data
   useEffect(() => {
     const githubUrl = "https://api.github.com/graphql"
     const token = process.env.GATSBY_GITHUB_ACCESS
@@ -48,11 +52,28 @@ const TechBoxFooter = () => {
       // This will set the res.data.data to the githubData state
       .then(res => setGithubData(res.data.data))
   }, [])
-  // This will display the count if the data exists
+
+  //creates a static value of totalCount on gatsby build as a fall back if the live query fail and to also eliminate the no value for the few seconds it takes for the api call to return
+  const repoCount = useStaticQuery(graphql`
+    query {
+      github {
+        viewer {
+          repositories(isFork: false) {
+            totalCount
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(repoCount)
   return (
     <Box>
       <p>Repos on github</p>
       <p className="bigger">
+        {/* {if no live data exisits, show static build value} */}
+        {!githubData.viewer && repoCount.github.viewer.repositories.totalCount}
+        {/* {if live data exisits, show live value} */}
         {githubData.viewer && githubData.viewer.repositories.totalCount}
       </p>
     </Box>
