@@ -1,21 +1,60 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
-
 import axios from "axios"
+
+const BoxContainer = styled.div`
+  padding: 10px;
+  width: 120px;
+  height: 120px;
+  box-sizing: content-box;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover div {
+    // background: #fc2602;
+    border-radius: 50%;
+    span.onHover {
+      opacity: 1;
+    }
+    span.noHover {
+      opacity: 0;
+    }
+  }
+  span.onHover {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+  }
+  span.noHover {
+    transition: 0.3s;
+  }
+  a {
+    text-decoration: none;
+  }
+`
 
 const Box = styled.div`
   background: #fc2602;
   position: relative;
   width: 120px;
   height: 120px;
+  position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  margin: 10px;
+
+  transition: 0.3s;
+  cursor: pointer;
 
   p {
     display: block;
@@ -23,7 +62,7 @@ const Box = styled.div`
     color: white;
     font-size: 0.85rem;
     font-weight: 500;
-    transition: all 0.2s linear;
+    transition: all 0.3s linear;
     line-height: 1rem;
     width: 100%;
     text-align: center;
@@ -32,6 +71,7 @@ const Box = styled.div`
       font-weight: 600;
       line-height: 2rem;
       padding-top: 10px;
+      opacity: 1;
     }
   }
 `
@@ -68,15 +108,25 @@ const TechBoxFooter = () => {
 
   console.log(repoCount)
   return (
-    <Box>
-      <p>Repos on github</p>
-      <p className="bigger">
-        {/* {if no live data exisits, show static build value} */}
-        {!githubData.viewer && repoCount.github.viewer.repositories.totalCount}
-        {/* {if live data exisits, show live value} */}
-        {githubData.viewer && githubData.viewer.repositories.totalCount}
-      </p>
-    </Box>
+    <BoxContainer>
+      <a href="https://github.com/iamjmitch" target="_blank" rel="noreferrer">
+        <Box>
+          <span className="onHover">
+            <p>Visit My Github</p>
+          </span>
+          <span className="noHover">
+            <p>Repos on github</p>
+            <p className="bigger">
+              {/* {if no live data exisits, show static build value} */}
+              {!githubData.viewer &&
+                repoCount.github.viewer.repositories.totalCount}
+              {/* {if live data exisits, show live value} */}
+              {githubData.viewer && githubData.viewer.repositories.totalCount}
+            </p>
+          </span>
+        </Box>
+      </a>
+    </BoxContainer>
   )
 }
 export default TechBoxFooter
