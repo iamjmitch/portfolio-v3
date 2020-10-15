@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+
+import axios from "axios"
 
 const Box = styled.div`
   background: #fc2602;
@@ -34,28 +36,26 @@ const Box = styled.div`
 `
 
 const TechBoxFooter = () => {
-  const axios = require("axios")
-  const githubUrl = "https://api.github.com/graphql"
-  const token = process.env.GATSBY_GITHUB_ACCESS
-  const oauth = { Authorization: "bearer " + token }
-  const query = "{viewer{repositories(isFork: false) {totalCount}}}"
-
-  const getData = () => {
-    return axios
+  const [githubData, setGithubData] = useState({})
+  // This will be called on component mount
+  useEffect(() => {
+    const githubUrl = "https://api.github.com/graphql"
+    const token = process.env.GATSBY_GITHUB_ACCESS
+    const oauth = { Authorization: "bearer " + token }
+    const query = "{viewer{repositories(isFork: false) {totalCount}}}"
+    axios
       .post(githubUrl, { query: query }, { headers: oauth })
-      .then(function (response) {
-        return (
-          <Box>
-            <p>Repos on github</p>
-            <p className="bigger">
-              {response.data.viewer.repositories.totalCount}
-            </p>
-            {/* this to be api call to github */}
-          </Box>
-        )
-      })
-  }
-  return <getData />
+      // This will set the res.data.data to the githubData state
+      .then(res => setGithubData(res.data.data))
+  }, [])
+  // This will display the count if the data exists
+  return (
+    <Box>
+      <p>Repos on github</p>
+      <p className="bigger">
+        {githubData.viewer && githubData.viewer.repositories.totalCount}
+      </p>
+    </Box>
+  )
 }
-
 export default TechBoxFooter

@@ -10,17 +10,6 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    {
-      resolve: `gatsby-source-github-api`,
-      options: {
-        url: "https://api.github.com/graphql",
-        token: process.env.GATSBY_GITHUB_ACCESS,
-        graphQLQuery: githubApiQuery,
-        variables: {
-          github_login: process.env.GATSBY_GITHUB_LOGIN,
-        },
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-svg`,
     {
