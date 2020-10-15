@@ -31,9 +31,11 @@ const BoxContainer = styled.div`
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+    line-height: 2rem;
   }
   span.noHover {
     transition: 0.3s;
+    line-height: 2rem;
   }
   a {
     text-decoration: none;
@@ -63,7 +65,7 @@ const Box = styled.div`
     font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s linear;
-    line-height: 1rem;
+    line-height: 1.2rem;
     width: 100%;
     text-align: center;
     &.bigger {
@@ -112,7 +114,7 @@ const TechBoxFooter = () => {
       <a href="https://github.com/iamjmitch" target="_blank" rel="noreferrer">
         <Box>
           <span className="onHover">
-            <p>Visit My Github</p>
+            <p>Visit My Github Page</p>
           </span>
           <span className="noHover">
             <p>Repos on github</p>
