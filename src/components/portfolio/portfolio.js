@@ -26,25 +26,25 @@ const portfolio = () => {
       <BoxContainer>
         <PortfolioboxHeader />
         <Portfoliobox
-          imageSrc="https://i.ibb.co/R3PWgSk/Untitled-1-1.png"
+          imageSrc="https://magcentre.com/wp-content/uploads/2017/06/how-to-create-a-website-feature-image-e1496943224192.jpg"
           websiteTitle="Andratech"
           blurb="A Landing Page For A Local Business"
           link="https://andratech-landing.iamjmitch.com/"
         />
         <Portfoliobox
-          imageSrc="https://i.ibb.co/R3PWgSk/Untitled-1-1.png"
+          imageSrc="https://magcentre.com/wp-content/uploads/2017/06/how-to-create-a-website-feature-image-e1496943224192.jpg"
           websiteTitle="Andratech"
           blurb="A Landing Page For A Local Business"
           link="https://andratech-landing.iamjmitch.com/"
         />
         <Portfoliobox
-          imageSrc="https://i.ibb.co/R3PWgSk/Untitled-1-1.png"
+          imageSrc="https://magcentre.com/wp-content/uploads/2017/06/how-to-create-a-website-feature-image-e1496943224192.jpg"
           websiteTitle="Andratech"
           blurb="A Landing Page For A Local Business"
           link="https://andratech-landing.iamjmitch.com/"
         />
         <Portfoliobox
-          imageSrc="https://i.ibb.co/R3PWgSk/Untitled-1-1.png"
+          imageSrc="https://magcentre.com/wp-content/uploads/2017/06/how-to-create-a-website-feature-image-e1496943224192.jpg"
           websiteTitle="Andratech"
           blurb="A Landing Page For A Local Business"
           link="https://andratech-landing.iamjmitch.com/"
