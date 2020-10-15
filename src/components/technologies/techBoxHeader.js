@@ -18,6 +18,7 @@ const Box = styled.div`
     color: white;
     font-size: 1rem;
     font-weight: 500;
+    line-height: 1.3rem;
     position: absolute;
     transition: all 0.2s linear;
     width: 100%;
