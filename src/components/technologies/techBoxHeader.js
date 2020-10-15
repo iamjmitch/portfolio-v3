@@ -16,7 +16,7 @@ const Box = styled.div`
     display: block;
     padding: 10px;
     color: white;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 500;
     position: absolute;
     transition: all 0.2s linear;
