@@ -118,11 +118,12 @@ const ContactForm = props => {
       },
       body: new URLSearchParams(formData).toString(),
     }).then(res => {
-      console.log(res)
-      console.log(formSent)
       if (res) {
         setFormSent(true)
-        console.log(formSent)
+        contactForm.reset()
+        setTimeout(function () {
+          setFormSent(false)
+        }, 5000)
       }
     })
   }
