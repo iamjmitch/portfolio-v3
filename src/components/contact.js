@@ -14,6 +14,7 @@ const FormContainer = styled.div`
     overflow: visible;
     position: relative;
     width: 100%;
+    transiiton: 0.5s;
     div {
       display: flex;
       flex-direction: column;
@@ -128,46 +129,47 @@ const ContactForm = props => {
         <h5>* REQUIRED FIELDS</h5>
         <p>{formSent && "Message Sent"}</p>
       </Heading>
-      {!formSent && (
-        <form
-          method="post"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-          name="contact"
-          action="/"
-          id="contactForm"
-          onSubmit={handleSubmit}
-        >
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
-          <div>
-            <label>Name*</label>
-            <input type="text" name="name" required />
-          </div>
-          <div>
-            <label>Email*</label>
-            <input type="email" name="email" required />
-          </div>
-          <div>
-            <label>Phone</label>
-            <input type="phone" name="phone" />
-          </div>
-          <div>
-            <label>Message*</label>
-            <textarea name="message" rows="10" required></textarea>
-            <span>
-              <SlideoutImage src={slideOut} />
-            </span>
-          </div>
-          <ul className="actions">
-            <li>
-              <button type="submit" className="button">
-                SEND
-              </button>
-            </li>
-          </ul>
-        </form>
-      )}
+      <form
+        method="post"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        name="contact"
+        action="/"
+        id="contactForm"
+        onSubmit={handleSubmit}
+        style={!formSent && "opacity=1"}
+        style={formSent && "opacity=0"}
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
+        <div>
+          <label>Name*</label>
+          <input type="text" name="name" required />
+        </div>
+        <div>
+          <label>Email*</label>
+          <input type="email" name="email" required />
+        </div>
+        <div>
+          <label>Phone</label>
+          <input type="phone" name="phone" />
+        </div>
+        <div>
+          <label>Message*</label>
+          <textarea name="message" rows="10" required></textarea>
+          <span>
+            <SlideoutImage src={slideOut} />
+          </span>
+        </div>
+        <ul className="actions">
+          <li>
+            <button type="submit" className="button">
+              SEND
+            </button>
+          </li>
+        </ul>
+      </form>
+      )
     </FormContainer>
   )
 }
