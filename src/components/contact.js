@@ -21,7 +21,7 @@ const FormContainer = styled.div`
         position: absolute;
         transition: 0.4s;
         right: 0;
-        bottom: 60px;
+        bottom: 35px;
         z-index: 0;
       }
       label {
@@ -46,7 +46,7 @@ const FormContainer = styled.div`
       textarea {
         &:focus + span {
           transform: translateX(100%);
-          bottom: 85px;
+          bottom: 60px;
         }
       }
     }
@@ -166,16 +166,8 @@ const ContactForm = props => {
         <ul className="actions">
           <li style={!formSent ? { display: "block" } : { display: "none" }}>
             <button type="submit" className="button">
-              SEND
+              {!formSent ? "SEND" : "MESSAGE SENT!"}
             </button>
-          </li>
-          <li>
-            <div
-              className="success"
-              style={formSent ? { opacity: "1" } : { opacity: "0" }}
-            >
-              <p>Message Sent!</p>
-            </div>
           </li>
         </ul>
       </form>
