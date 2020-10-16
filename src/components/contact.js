@@ -164,7 +164,7 @@ const ContactForm = props => {
           </span>
         </div>
         <ul className="actions">
-          <li style={!formSent ? { display: "block" } : { display: "none" }}>
+          <li>
             <button type="submit" className="button">
               {!formSent ? "SEND" : "MESSAGE SENT!"}
             </button>
