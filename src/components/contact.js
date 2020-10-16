@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import slideOut from "../images/slide-out.png"
 const FormContainer = styled.div`
@@ -89,6 +89,9 @@ const Heading = styled.div`
     font-size: 0.8rem;
     font-weight: 500;
   }
+  p {
+    color: white;
+  }
 `
 
 const SlideoutImage = styled.img`
@@ -123,46 +126,48 @@ const ContactForm = props => {
       <Heading>
         <h4>CONTACT ME</h4>
         <h5>* REQUIRED FIELDS</h5>
-        <p>{formSent && "worked"}</p>
+        <p>{formSent && "Message Sent"}</p>
       </Heading>
-      <form
-        method="post"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
-        name="contact"
-        action="/"
-        id="contactForm"
-        onSubmit={handleSubmit}
-      >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="contact" />
-        <div>
-          <label>Name*</label>
-          <input type="text" name="name" required />
-        </div>
-        <div>
-          <label>Email*</label>
-          <input type="email" name="email" required />
-        </div>
-        <div>
-          <label>Phone</label>
-          <input type="phone" name="phone" />
-        </div>
-        <div>
-          <label>Message*</label>
-          <textarea name="message" rows="10" required></textarea>
-          <span>
-            <SlideoutImage src={slideOut} />
-          </span>
-        </div>
-        <ul className="actions">
-          <li>
-            <button type="submit" className="button">
-              SEND
-            </button>
-          </li>
-        </ul>
-      </form>
+      {!formSent && (
+        <form
+          method="post"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+          name="contact"
+          action="/"
+          id="contactForm"
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
+          <div>
+            <label>Name*</label>
+            <input type="text" name="name" required />
+          </div>
+          <div>
+            <label>Email*</label>
+            <input type="email" name="email" required />
+          </div>
+          <div>
+            <label>Phone</label>
+            <input type="phone" name="phone" />
+          </div>
+          <div>
+            <label>Message*</label>
+            <textarea name="message" rows="10" required></textarea>
+            <span>
+              <SlideoutImage src={slideOut} />
+            </span>
+          </div>
+          <ul className="actions">
+            <li>
+              <button type="submit" className="button">
+                SEND
+              </button>
+            </li>
+          </ul>
+        </form>
+      )}
     </FormContainer>
   )
 }
