@@ -14,7 +14,6 @@ const FormContainer = styled.div`
     overflow: visible;
     position: relative;
     width: 100%;
-    transiiton: 0.5s;
     div {
       display: flex;
       flex-direction: column;
@@ -90,8 +89,14 @@ const Heading = styled.div`
     font-size: 0.8rem;
     font-weight: 500;
   }
-  p {
-    color: white;
+  div {
+    background: #fc2602;
+    margin: 10px 0;
+
+    transition: 0.3s;
+    p {
+      color: white;
+    }
   }
 `
 
@@ -127,17 +132,18 @@ const ContactForm = props => {
       <Heading>
         <h4>CONTACT ME</h4>
         <h5>* REQUIRED FIELDS</h5>
-        <p>{formSent && "Message Sent"}</p>
+        <div style={formSent ? { opacity: "1" } : { opacity: "0" }}>
+          <p>Message Sent!</p>
+        </div>
       </Heading>
       <form
         method="post"
         netlify-honeypot="bot-field"
         data-netlify="true"
         name="contact"
+        action="/"
         id="contactForm"
         onSubmit={handleSubmit}
-        style={!formSent && "opacity=1"}
-        style={formSent && "opacity=0"}
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
@@ -168,7 +174,6 @@ const ContactForm = props => {
           </li>
         </ul>
       </form>
-      )
     </FormContainer>
   )
 }
