@@ -21,7 +21,7 @@ const FormContainer = styled.div`
         position: absolute;
         transition: 0.4s;
         right: 0;
-        bottom: 35px;
+        bottom: 60px;
         z-index: 0;
       }
       label {
@@ -46,12 +46,21 @@ const FormContainer = styled.div`
       textarea {
         &:focus + span {
           transform: translateX(100%);
-          bottom: 60px;
+          bottom: 85px;
         }
       }
     }
     li {
       list-style: none;
+      div {
+        background: #fc2602;
+        margin: 10px 0;
+
+        transition: 0.3s;
+        p {
+          color: white;
+        }
+      }
       button {
         background: #fc2602;
         color: white;
@@ -89,15 +98,6 @@ const Heading = styled.div`
     font-size: 0.8rem;
     font-weight: 500;
   }
-  div {
-    background: #fc2602;
-    margin: 10px 0;
-
-    transition: 0.3s;
-    p {
-      color: white;
-    }
-  }
 `
 
 const SlideoutImage = styled.img`
@@ -132,9 +132,6 @@ const ContactForm = props => {
       <Heading>
         <h4>CONTACT ME</h4>
         <h5>* REQUIRED FIELDS</h5>
-        <div style={formSent ? { opacity: "1" } : { opacity: "0" }}>
-          <p>Message Sent!</p>
-        </div>
       </Heading>
       <form
         method="post"
@@ -167,10 +164,18 @@ const ContactForm = props => {
           </span>
         </div>
         <ul className="actions">
-          <li>
+          <li style={!formSent ? { display: "block" } : { display: "none" }}>
             <button type="submit" className="button">
               SEND
             </button>
+          </li>
+          <li>
+            <div
+              className="success"
+              style={formSent ? { opacity: "1" } : { opacity: "0" }}
+            >
+              <p>Message Sent!</p>
+            </div>
           </li>
         </ul>
       </form>
