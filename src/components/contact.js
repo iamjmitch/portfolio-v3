@@ -134,7 +134,6 @@ const ContactForm = props => {
         netlify-honeypot="bot-field"
         data-netlify="true"
         name="contact"
-        action="/"
         id="contactForm"
         onSubmit={handleSubmit}
         style={!formSent && "opacity=1"}
