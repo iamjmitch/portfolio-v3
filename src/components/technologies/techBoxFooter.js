@@ -108,7 +108,6 @@ const TechBoxFooter = () => {
     }
   `)
 
-  console.log(repoCount)
   return (
     <BoxContainer>
       <a href="https://github.com/iamjmitch" target="_blank" rel="noreferrer">

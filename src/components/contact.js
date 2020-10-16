@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import slideOut from "../images/slide-out.png"
 const FormContainer = styled.div`
@@ -96,11 +96,31 @@ const SlideoutImage = styled.img`
 `
 
 const ContactForm = props => {
+  const [formSent, setFormSent] = useState(false)
+  const handleSubmit = event => {
+    event.preventDefault()
+    let contactForm = document.querySelector("#contactForm")
+    const formData = new FormData(contactForm)
+    fetch(contactForm.getAttribute("action"), {
+      method: "POST",
+      headers: {
+        Accept: "application/x-www-form-urlencoded;charset=UTF-8",
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: new URLSearchParams(formData).toString(),
+    }).then(res => {
+      if (res) {
+        setFormSent(true)
+      }
+    })
+  }
+
   return (
     <FormContainer>
       <Heading>
         <h4>CONTACT ME</h4>
         <h5>* REQUIRED FIELDS</h5>
+        <p>{formSent && "worked"}</p>
       </Heading>
       <form
         method="post"
@@ -108,6 +128,8 @@ const ContactForm = props => {
         data-netlify="true"
         name="contact"
         action="/?MessageSuccess"
+        id="contactForm"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />

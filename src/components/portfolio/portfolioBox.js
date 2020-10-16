@@ -16,7 +16,7 @@ const Box = styled.div`
   margin: 10px;
   cursor: pointer;
   &:hover {
-    background: #fc2602;
+    background: #262626;
   }
   img {
     width: 100%;
