@@ -7,6 +7,9 @@ const BoxContainer = styled.div`
   height: 140px;
   box-sizing: content-box;
   cursor: pointer;
+  div {
+    border: 2px solid #151515;
+  }
   &:hover div {
     border: 2px solid #fa2906;
     border-radius: 50%;
