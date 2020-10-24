@@ -30,7 +30,7 @@ const portfolioBoxHeader = props => {
   return (
     <Box>
       <p>
-        MY<br></br>FAVOURITE<br></br> CREATIONS
+        FAVOURITE<br></br> CREATIONS
       </p>
     </Box>
   )

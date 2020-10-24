@@ -40,10 +40,7 @@ const Box = styled.div`
 const PortfolioBoxFooter = props => {
   return (
     <Box>
-      <p>
-        click here <br></br> for the full <br></br> library of my <br></br>
-        creations
-      </p>
+      <p>see the full library of my creations</p>
     </Box>
   )
 }
