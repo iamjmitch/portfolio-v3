@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 
 import Portfoliobox from "./portfolioBox"
 import PortfolioboxHeader from "./portfolioBoxHeader"
@@ -15,40 +15,56 @@ const PortfolioContainer = styled.div`
 `
 
 const BoxContainer = styled.div`
-  width: 700px;
+  width: 960px;
   display: flex;
   flex-wrap: wrap;
 `
 
-const portfolio = () => {
+const Portfolio = () => {
+  // will only pull data for entires marked "featured=true"
+  const data = useStaticQuery(graphql`
+    query portfolio {
+      allPrismicPortfolioPiece(
+        filter: { data: { website_featured: { eq: true } } }
+        sort: { fields: data___featured_position, order: ASC }
+      ) {
+        edges {
+          node {
+            data {
+              featured_position
+              website_blurb {
+                text
+              }
+              website_image {
+                url
+              }
+              website_link {
+                url
+              }
+              website_name {
+                text
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(data)
   return (
     <PortfolioContainer>
       <BoxContainer>
         <PortfolioboxHeader />
-        <Portfoliobox
-          imageSrc="https://magcentre.com/wp-content/uploads/2017/06/how-to-create-a-website-feature-image-e1496943224192.jpg"
-          websiteTitle="Placeholder"
-          blurb="Lorem ipsum dolor sit amet, consectetur adipiscing."
-          link="#"
-        />
-        <Portfoliobox
-          imageSrc="https://magcentre.com/wp-content/uploads/2017/06/how-to-create-a-website-feature-image-e1496943224192.jpg"
-          websiteTitle="Placeholder"
-          blurb="Lorem ipsum dolor sit amet, consectetur adipiscing."
-          link="#"
-        />
-        <Portfoliobox
-          imageSrc="https://magcentre.com/wp-content/uploads/2017/06/how-to-create-a-website-feature-image-e1496943224192.jpg"
-          websiteTitle="Placeholder"
-          blurb="Lorem ipsum dolor sit amet, consectetur adipiscing."
-          link="#"
-        />
-        <Portfoliobox
-          imageSrc="https://magcentre.com/wp-content/uploads/2017/06/how-to-create-a-website-feature-image-e1496943224192.jpg"
-          websiteTitle="Placeholder"
-          blurb="Lorem ipsum dolor sit amet, consectetur adipiscing."
-          link="#"
-        />
+
+        {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => (
+          <Portfoliobox
+            imageSrc={node.data.website_image.url}
+            websiteTitle={node.data.website_name.text}
+            blurb={node.data.website_blurb.text}
+            link={node.data.website_link.url}
+          />
+        ))}
 
         <Link to="/creations" style={{ textDecoration: "none" }}>
           <PortfolioboxFooter />
@@ -58,4 +74,4 @@ const portfolio = () => {
   )
 }
 
-export default portfolio
+export default Portfolio

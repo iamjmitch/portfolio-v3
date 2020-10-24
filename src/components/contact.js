@@ -8,7 +8,7 @@ const FormContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 100px 0;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   form {
     overflow: visible;

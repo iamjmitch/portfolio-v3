@@ -38,6 +38,7 @@ module.exports = {
         schemas: {
           about_blurb: require("./src/schemas/about_blurb.json"),
           tech: require("./src/schemas/tech.json"),
+          portfolio_piece: require("./src/schemas/portfolio_piece.json"),
         },
       },
     },

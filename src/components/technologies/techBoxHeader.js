@@ -2,10 +2,11 @@ import React from "react"
 import styled from "styled-components"
 
 const Box = styled.div`
-  background: #fc2602;
+  background: rgb(21 21 21);
+  border: 2px solid #fa2906;
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
 
   display: flex;
   align-items: center;
@@ -14,15 +15,16 @@ const Box = styled.div`
 
   p {
     display: block;
-    padding: 10px;
+    padding: 15px;
     color: white;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.3rem;
     position: absolute;
     transition: all 0.2s linear;
     width: 100%;
     text-align: center;
+    transform: rotate(-45deg);
   }
 `
 
@@ -30,7 +32,7 @@ const TechBoxHeader = props => {
   return (
     <Box>
       <p>
-        Current<br></br>Tech<br></br> Stack
+        My<br></br>Skills
       </p>
     </Box>
   )

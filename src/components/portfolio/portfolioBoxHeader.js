@@ -2,10 +2,11 @@ import React from "react"
 import styled from "styled-components"
 
 const Box = styled.div`
-  background: #fc2602;
+  background: transparent;
+  border: 2px solid #fc2602;
   position: relative;
-  width: 213px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   text-transform: uppercase;
@@ -14,13 +15,14 @@ const Box = styled.div`
     display: block;
     padding: 10px;
     color: white;
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     font-weight: 500;
     position: absolute;
     transition: all 0.2s linear;
     width: 100%;
     text-align: center;
-    line-height: 1.3rem;
+    line-height: 2rem;
+    transform: rotate(-45deg);
   }
 `
 
@@ -28,7 +30,7 @@ const portfolioBoxHeader = props => {
   return (
     <Box>
       <p>
-        a few of<br></br> my favourite <br></br>creations
+        MY<br></br>FAVOURITE<br></br> CREATIONS
       </p>
     </Box>
   )

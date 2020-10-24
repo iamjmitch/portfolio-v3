@@ -3,15 +3,16 @@ import styled from "styled-components"
 
 const BoxContainer = styled.div`
   padding: 10px;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   box-sizing: content-box;
   cursor: pointer;
   &:hover div {
-    // background: #fc2602;
+    border: 2px solid #fa2906;
     border-radius: 50%;
     p {
       opacity: 1;
+      color: white;
     }
     img {
       opacity: 0;
@@ -33,14 +34,14 @@ const Box = styled.div`
   overflow: hidden;
 
   p {
-    max-width: 120px;
+    max-width: 172px;
     color: #fc2602;
     font-size: 1rem;
     font-weight: 500;
     position: absolute;
     transition: all 0.2s linear;
     text-align: center;
-    line-height: 1.2rem;
+    line-height: 1.5rem;
     padding: 0 10px;
 
     opacity: 0;

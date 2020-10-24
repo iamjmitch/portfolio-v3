@@ -14,7 +14,7 @@ const TechContainer = styled.div`
 `
 
 const BoxContainer = styled.div`
-  width: 700px;
+  width: 960px;
   display: flex;
   flex-wrap: wrap;
 `

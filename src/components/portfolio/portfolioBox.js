@@ -3,10 +3,10 @@ import styled from "styled-components"
 
 const Box = styled.div`
   background: #262626;
+  border: 2px solid #262626;
   position: relative;
-  width: 213px;
-  height: 150px;
-  padding: 10px;
+  width: 300px;
+  height: 300px;
   transition: all 0.1s linear;
   display: flex;
   flex-direction: column;
@@ -15,8 +15,14 @@ const Box = styled.div`
   text-transform: uppercase;
   margin: 10px;
   cursor: pointer;
+  overflow: hidden;
   &:hover {
     background: #262626;
+    border: 2px solid #fc2602;
+    padding: 0;
+    img {
+      transform: scale(1.1);
+    }
   }
   img {
     width: 100%;
@@ -34,7 +40,7 @@ const Websitebox = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   font-size: 1.3rem;
   color: white;
@@ -42,10 +48,12 @@ const Websitebox = styled.div`
   padding: 10px;
   h5 {
     font-weight: 600;
+    color: #fc2602;
   }
   P {
     font-size: 0.85rem;
     text-transform: capitalize;
+    padding: 15px 0;
   }
   button {
     background: #fc2602;
@@ -74,7 +82,7 @@ const WebsiteBlurb = props => {
     </Websitebox>
   )
 }
-const TechBox = props => {
+const PortfolioBox = props => {
   const [hover, setHover] = useState(false)
   return (
     <Box
@@ -96,4 +104,4 @@ const TechBox = props => {
   )
 }
 
-export default TechBox
+export default PortfolioBox

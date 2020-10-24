@@ -1,0 +1,45 @@
+{
+  "Main": {
+    "website_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "website_image"
+      }
+    },
+    "website_name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "website_name"
+      }
+    },
+    "website_blurb": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "website_blurb"
+      }
+    },
+    "website_link": {
+      "type": "Link",
+      "config": {
+        "label": "website_link"
+      }
+    },
+    "website_featured": {
+      "type": "Boolean",
+      "config": {
+        "default_value": false,
+        "label": "website_featured"
+      }
+    },
+    "featured_position": {
+      "type": "Number",
+      "config": {
+        "label": "featured_position"
+      }
+    }
+  }
+}

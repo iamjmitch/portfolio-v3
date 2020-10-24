@@ -5,8 +5,8 @@ import axios from "axios"
 
 const BoxContainer = styled.div`
   padding: 10px;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   box-sizing: content-box;
   cursor: pointer;
   transition: 0.3s;
@@ -15,9 +15,11 @@ const BoxContainer = styled.div`
     border-radius: 50%;
     span.onHover {
       opacity: 1;
+      transform: rotate(0);
     }
     span.noHover {
       opacity: 0;
+      transform: rotate(0);
     }
   }
   span.onHover {
@@ -32,10 +34,17 @@ const BoxContainer = styled.div`
     align-items: center;
     transition: 0.3s;
     line-height: 2rem;
+    transform: rotate(-45deg);
   }
   span.noHover {
     transition: 0.3s;
     line-height: 2rem;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    transform: rotate(-45deg);
+    line-height: 2rem;
+    margin-top: 11px;
+    margin-left: 12px;
   }
   a {
     text-decoration: none;
@@ -43,10 +52,11 @@ const BoxContainer = styled.div`
 `
 
 const Box = styled.div`
-  background: #fc2602;
+  background: rgb(21 21 21);
+  border: 2px solid #fa2906;
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   position: relative;
 
   display: flex;
