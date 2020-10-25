@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 const Box = styled.div`
@@ -22,6 +22,7 @@ const Box = styled.div`
     }
     @media (max-width: 500px) {
       border-radius: 0;
+      background: #fc2602;
     }
   }
 
@@ -38,6 +39,7 @@ const Box = styled.div`
     line-height: 2rem;
     @media (max-width: 500px) {
       transform: none;
+      font-size: 1rem;
     }
   }
 
@@ -54,9 +56,17 @@ const Box = styled.div`
 `
 
 const PortfolioBoxFooter = props => {
+  const [isMobile, setisMobile] = useState(false)
+  useEffect(() => {
+    if (window.innerWidth < 500) {
+      setisMobile(true)
+    } else {
+      setisMobile(false)
+    }
+  }, [])
   return (
     <Box>
-      <p>see the full library of my creations</p>
+      <p>{isMobile ? "See More" : "see the full library of my creations"}</p>
     </Box>
   )
 }
