@@ -28,6 +28,15 @@ const Box = styled.div`
     width: 100%;
     transition: all 0.2s linear;
   }
+
+  @media (max-width: 639px) {
+    width: 46vw;
+    height: auto;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    height: auto;
+  }
 `
 
 const Websitebox = styled.div`

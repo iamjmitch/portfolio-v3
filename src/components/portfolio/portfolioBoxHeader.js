@@ -23,6 +23,18 @@ const Box = styled.div`
     text-align: center;
     line-height: 2rem;
     transform: rotate(-45deg);
+    @media (max-width: 639px) {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 639px) {
+    width: 46vw;
+    height: auto;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    height: auto;
   }
 `
 
