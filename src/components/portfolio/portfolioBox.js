@@ -36,6 +36,7 @@ const Box = styled.div`
   @media (max-width: 500px) {
     width: 100%;
     height: auto;
+    margin: 5px 10px;
   }
 `
 
