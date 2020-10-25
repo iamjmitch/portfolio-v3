@@ -33,18 +33,20 @@ const Box = styled.div`
     width: 100%;
     text-align: center;
     line-height: 2rem;
-    @media (max-width: 639px) {
+    @media (max-width: 500px) {
       transform: none;
     }
   }
 
   @media (max-width: 639px) {
-    width: 46vw;
-    height: auto;
+    width: 42vw;
+    height: 42vw;
   }
   @media (max-width: 500px) {
     width: 100%;
     height: auto;
+    padding: 10px;
+    margin: 0;
   }
 `
 

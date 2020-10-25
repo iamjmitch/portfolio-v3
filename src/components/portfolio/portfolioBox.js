@@ -30,7 +30,7 @@ const Box = styled.div`
   }
 
   @media (max-width: 639px) {
-    width: 46vw;
+    width: 42vw;
     height: auto;
   }
   @media (max-width: 500px) {

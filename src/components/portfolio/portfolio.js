@@ -13,6 +13,9 @@ const PortfolioContainer = styled.div`
   align-items: center;
   padding: 100px 0;
   background: #151515;
+  @media (max-width: 500px) {
+    padding: 20px 0;
+  }
 `
 
 const BoxContainer = styled.div`
@@ -20,6 +23,11 @@ const BoxContainer = styled.div`
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  .link {
+    @media (max-width: 500px) {
+      padding: 10px;
+    }
+  }
 `
 
 const Portfolio = () => {
@@ -68,7 +76,11 @@ const Portfolio = () => {
           />
         ))}
 
-        <Link to="/creations" style={{ textDecoration: "none" }}>
+        <Link
+          className="link"
+          to="/creations"
+          style={{ textDecoration: "none" }}
+        >
           <PortfolioboxFooter />
         </Link>
       </BoxContainer>

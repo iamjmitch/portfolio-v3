@@ -23,13 +23,14 @@ const Box = styled.div`
     text-align: center;
     line-height: 2rem;
     transform: rotate(-45deg);
-    @media (max-width: 639px) {
+    @media (max-width: 500px) {
       transform: none;
+      position: inherit;
     }
   }
 
   @media (max-width: 639px) {
-    width: 46vw;
+    width: 42vw;
     height: auto;
   }
   @media (max-width: 500px) {
