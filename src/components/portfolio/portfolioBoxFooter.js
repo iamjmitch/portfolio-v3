@@ -20,6 +20,9 @@ const Box = styled.div`
     p {
       transform: rotate(0);
     }
+    @media (max-width: 500px) {
+      border-radius: 0;
+    }
   }
 
   p {
