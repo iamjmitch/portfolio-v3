@@ -14,8 +14,8 @@ const WhoContainer = styled.div`
 
 const AvatarContainer = styled.div`
   background: #ff1212;
-  width: 18vh;
-  height: 18vh;
+  width: 15vh;
+  height: 15vh;
   overflow: hidden;
   display: flex;
   border-radius: 50%;
