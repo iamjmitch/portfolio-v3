@@ -26,6 +26,10 @@ const Box = styled.div`
     text-align: center;
     transform: rotate(-45deg);
   }
+  @media (max-width: 479px) {
+    width: 100px;
+    height: 100px;
+  }
 `
 
 const TechBoxHeader = props => {

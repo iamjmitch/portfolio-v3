@@ -4,6 +4,10 @@ import { graphql, useStaticQuery } from "gatsby"
 import axios from "axios"
 
 const BoxContainer = styled.div`
+  @media (max-width: 479px) {
+    width: 100px;
+    height: 100px;
+  }
   padding: 10px;
   width: 140px;
   height: 140px;
@@ -67,6 +71,10 @@ const Box = styled.div`
 
   transition: 0.3s;
   cursor: pointer;
+  @media (max-width: 479px) {
+    width: 100px;
+    height: 100px;
+  }
 
   p {
     display: block;
@@ -78,12 +86,19 @@ const Box = styled.div`
     line-height: 1.2rem;
     width: 100%;
     text-align: center;
+    @media (max-width: 479px) {
+      font-size: 0.8rem;
+    }
     &.bigger {
       font-size: 2rem;
       font-weight: 600;
       line-height: 2rem;
       padding-top: 10px;
       opacity: 1;
+      @media (max-width: 479px) {
+        font-size: 1.6rem;
+        padding-top: 5px;
+      }
     }
   }
 `

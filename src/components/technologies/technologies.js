@@ -16,6 +16,7 @@ const TechContainer = styled.div`
 const BoxContainer = styled.div`
   width: 960px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 `
 

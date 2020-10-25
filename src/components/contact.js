@@ -10,6 +10,9 @@ const FormContainer = styled.div`
   padding: 100px 0;
   max-width: 500px;
   margin: 0 auto;
+  @media (max-width: 540px) {
+    padding: 100px 20px;
+  }
   form {
     overflow: visible;
     position: relative;
@@ -102,6 +105,9 @@ const Heading = styled.div`
 
 const SlideoutImage = styled.img`
   height: 130px;
+  @media (max-width: 715px) {
+    display: none;
+  }
 `
 
 const ContactForm = props => {

@@ -21,6 +21,10 @@ const BoxContainer = styled.div`
       opacity: 0;
     }
   }
+  @media (max-width: 479px) {
+    width: 100px;
+    height: 100px;
+  }
 `
 
 const Box = styled.div`
@@ -46,8 +50,10 @@ const Box = styled.div`
     text-align: center;
     line-height: 1.5rem;
     padding: 0 10px;
-
     opacity: 0;
+    @media (max-width: 479px) {
+      font-size: 0.85rem;
+    }
   }
   img {
     min-width: 50%;

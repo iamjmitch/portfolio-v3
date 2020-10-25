@@ -8,6 +8,7 @@ import PortfolioboxFooter from "./portfolioBoxFooter"
 
 const PortfolioContainer = styled.div`
   display: flex;
+
   justify-content: center;
   align-items: center;
   padding: 100px 0;
@@ -16,6 +17,7 @@ const PortfolioContainer = styled.div`
 
 const BoxContainer = styled.div`
   width: 960px;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
 `

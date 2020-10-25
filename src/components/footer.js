@@ -23,9 +23,15 @@ const SubText = styled.p`
 `
 const FooterLogos = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
   font-weight: 500;
+  @media (max-width: 520px) {
+    .notMobile {
+      display: none;
+    }
+  }
 `
 const LogoContainer = styled.div`
   display: flex;
@@ -54,11 +60,11 @@ const Footer = () => {
           <p>DESIGNED AND DEVLOPED BY</p>
           <IamjmitchLogo />
         </LogoContainer>
-        <LogoContainer>
+        <LogoContainer className="notMobile">
           <p>BUILT WITH</p>
           <GatsbyLogo />
         </LogoContainer>
-        <LogoContainer>
+        <LogoContainer className="notMobile">
           <p>MANAGED WITH</p>
           <PrismicLogo />
         </LogoContainer>
