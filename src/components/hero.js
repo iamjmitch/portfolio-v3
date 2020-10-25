@@ -41,23 +41,28 @@ const HeroContent = styled.div`
   h1 {
     font-size: 5em;
     line-height: 76px;
-
   }
   h2 {
-    font-size: 3.5em; 
+    font-size: 3.5em;
     line-height: 65px;
     padding-top: 10px;
     b {
       color: #fc2602;
     }
   }
-  h3{
+  h3 {
     font-size: 1.9em;
     font-weight: 500;
     padding-top: 20px;
     b {
       color: #fc2602;
     }
+  }
+
+  @media (max-width: 600px) {
+    text-align: center;
+    font-size: 12px;
+  }
 `
 
 const Hero = () => {
