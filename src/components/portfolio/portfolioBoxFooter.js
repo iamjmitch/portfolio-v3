@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 const Box = styled.div`
-  background: transparent;
-  border: 2px solid #fc2602;
+  background: #262626;
+  border: 1px solid #fc2602;
   position: relative;
   width: 300px;
   height: 300px;
