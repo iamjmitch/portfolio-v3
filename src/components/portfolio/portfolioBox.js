@@ -77,7 +77,7 @@ const Websitebox = styled.div`
     transition: all 0.5s;
     &:hover {
       color: white;
-      inset 200px 0px 9px 0px rgb(252 38 2);
+      box-shadow: inset 200px 0px 9px 0px rgb(252 38 2);
       border: 1px solid white;
     }
   }
