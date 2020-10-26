@@ -18,6 +18,9 @@ const BoxContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  @media (max-width: 500px) {
+    padding: 0 10px;
+  }
 `
 
 const Tech = () => {

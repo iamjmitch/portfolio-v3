@@ -7,6 +7,7 @@ const BoxContainer = styled.div`
   @media (max-width: 479px) {
     width: 100px;
     height: 100px;
+    padding: 3px;
   }
   padding: 10px;
   width: 140px;
@@ -32,7 +33,7 @@ const BoxContainer = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

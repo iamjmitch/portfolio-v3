@@ -5,11 +5,12 @@ import Header from "./header"
 import Footer from "./footer"
 
 const PageLayout = styled.div`
-  background: #0b0a0a;`
+  background: #0b0a0a;
+`
 
 const Layout = props => {
   return (
-    <PageLayout>
+    <PageLayout style={{ minWidth: "350px" }}>
       <Header />
       {props.children}
       <Footer />

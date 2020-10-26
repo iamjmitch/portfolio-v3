@@ -29,6 +29,7 @@ const Box = styled.div`
   @media (max-width: 479px) {
     width: 100px;
     height: 100px;
+    margin: 3px;
   }
 `
 

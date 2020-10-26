@@ -24,6 +24,7 @@ const BoxContainer = styled.div`
   @media (max-width: 479px) {
     width: 100px;
     height: 100px;
+    padding: 3px;
   }
 `
 
@@ -39,6 +40,9 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  @media (max-width: 479px) {
+    padding: 3px;
+  }
 
   p {
     max-width: 172px;
