@@ -17,7 +17,7 @@ const Box = styled.div`
   cursor: pointer;
   overflow: hidden;
   &:hover {
-    background: #811d0c;
+    background: #0d0d0d59;
     border: 2px solid #fc2602;
     padding: 0;
     img {
@@ -59,8 +59,7 @@ const Websitebox = styled.div`
   padding: 10px;
   h5 {
     font-weight: 600;
-    // color: #fc2602;
-    color: white;
+    color: #fc2602;
   }
   P {
     font-size: 0.85rem;
@@ -79,6 +78,14 @@ const Websitebox = styled.div`
       color: white;
       box-shadow: inset 200px 0px 9px 0px rgb(252 38 2);
       border: 1px solid white;
+    }
+  }
+  @media (max-width: 500px) {
+    h5 {
+      font-size: 1.4rem;
+    }
+    p {
+      font-size: 1rem;
     }
   }
 `
@@ -102,7 +109,7 @@ const PortfolioBox = props => {
       onMouseLeave={() => setHover(false)}
     >
       <img
-        style={!hover ? { opacity: "1" } : { opacity: "0.4" }}
+        style={!hover ? { opacity: "1" } : { opacity: "0.2" }}
         src={props.imageSrc}
         alt="website"
       />
