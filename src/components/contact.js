@@ -83,6 +83,10 @@ const FormContainer = styled.div`
           color: #fc2602;
           box-shadow: inset 200px 0px 9px 0px rgb(255 255 255);
         }
+        @media (max-width: 500px) {
+          width: 100%;
+          padding: 10px;
+        }
       }
     }
   }
