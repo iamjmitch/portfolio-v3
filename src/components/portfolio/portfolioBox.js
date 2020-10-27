@@ -77,7 +77,8 @@ const Websitebox = styled.div`
     font-weight: 600;
     cursor: pointer;
     transition: all 0.5s;
-    padding: 5px;
+    font-size: 1rem;
+
     &:hover {
       color: white;
       box-shadow: inset 200px 0px 9px 0px rgb(252 38 2);
