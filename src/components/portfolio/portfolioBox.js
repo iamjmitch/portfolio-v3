@@ -5,8 +5,8 @@ const Box = styled.div`
   background: #262626;
   border: 2px solid #262626;
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 600px;
+
   transition: all 0.1s linear;
   display: flex;
   flex-direction: column;
@@ -20,10 +20,6 @@ const Box = styled.div`
     background: #0d0d0d59;
     border: 2px solid #fc2602;
     padding: 0;
-    img {
-      margin-top: -20px;
-      margin-bottom: 20px;
-    }
   }
   img {
     width: 100%;
@@ -58,7 +54,7 @@ const Websitebox = styled.div`
   font-size: 1.3rem;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 40px;
   h5 {
     font-weight: 600;
     color: #fc2602;

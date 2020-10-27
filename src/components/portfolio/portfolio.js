@@ -19,7 +19,7 @@ const PortfolioContainer = styled.div`
 `
 
 const BoxContainer = styled.div`
-  width: 960px;
+  width: 1300px;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -65,7 +65,7 @@ const Portfolio = () => {
   return (
     <PortfolioContainer>
       <BoxContainer>
-        <PortfolioboxHeader />
+        {/* <PortfolioboxHeader /> */}
 
         {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => (
           <Portfoliobox
@@ -81,7 +81,7 @@ const Portfolio = () => {
           to="/creations"
           style={{ textDecoration: "none" }}
         >
-          <PortfolioboxFooter />
+          {/* <PortfolioboxFooter /> */}
         </Link>
       </BoxContainer>
     </PortfolioContainer>
