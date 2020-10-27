@@ -26,6 +26,9 @@ const Box = styled.div`
     @media (max-width: 500px) {
       transform: none;
       position: inherit;
+      .notMobile {
+        display: none;
+      }
     }
   }
 
@@ -36,6 +39,7 @@ const Box = styled.div`
   @media (max-width: 500px) {
     width: 100%;
     height: auto;
+    background: #fc2602;
   }
 `
 
@@ -43,7 +47,7 @@ const portfolioBoxHeader = props => {
   return (
     <Box>
       <p>
-        FAVOURITE<br></br> CREATIONS
+        FAVOURITE<br className="notMobile"></br> CREATIONS
       </p>
     </Box>
   )

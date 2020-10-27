@@ -56,6 +56,7 @@ const HeroContent = styled.div`
     padding-top: 20px;
     b {
       color: #fc2602;
+      padding: 0 10px;
     }
   }
 

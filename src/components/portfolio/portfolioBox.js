@@ -38,6 +38,8 @@ const Box = styled.div`
     width: 100%;
     height: auto;
     margin: 5px 10px;
+    background: transparent;
+    border: none;
   }
 `
 
@@ -60,9 +62,10 @@ const Websitebox = styled.div`
   h5 {
     font-weight: 600;
     color: #fc2602;
+    font-size: 1.5rem;
   }
   P {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: capitalize;
     padding: 15px 0;
   }
@@ -74,18 +77,23 @@ const Websitebox = styled.div`
     font-weight: 600;
     cursor: pointer;
     transition: all 0.5s;
+    padding: 5px;
     &:hover {
       color: white;
       box-shadow: inset 200px 0px 9px 0px rgb(252 38 2);
       border: 1px solid white;
     }
+    @media (max-width: 500px) {
+      padding: 5px;
+      font-size: 1rem;
+    }
   }
   @media (max-width: 500px) {
     h5 {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
     p {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
 `

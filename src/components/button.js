@@ -19,6 +19,10 @@ const Button = styled.button`
     color: #fc2602;
     box-shadow: inset 200px 0px 9px 0px rgb(255 255 255);
   }
+  @media (max-width: 500px) {
+    font-size: 1.3rem;
+    padding: 10px 10px;
+  }
 `
 
 const button = props => {
