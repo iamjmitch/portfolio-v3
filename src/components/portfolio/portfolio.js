@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link, useStaticQuery } from "gatsby"
 
-import Portfoliobox from "./portfolioBox"
+import Portfoliobox from "./portfolioBox2"
 import PortfolioboxHeader from "./portfolioBoxHeader"
 import PortfolioboxFooter from "./portfolioBoxFooter"
 
