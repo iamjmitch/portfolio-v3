@@ -37,7 +37,7 @@ const TechBoxHeader = props => {
   return (
     <Box>
       <p>
-        My<br></br>Skills
+        My<br></br>Stack
       </p>
     </Box>
   )
