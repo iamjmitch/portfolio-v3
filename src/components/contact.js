@@ -83,12 +83,12 @@ const FormContainer = styled.div`
         align-self: center;
         transition: all 0.5s;
         list-style: none;
+        width: 100%;
         &:hover {
           color: #fc2602;
-          box-shadow: inset 200px 0px 9px 0px rgb(255 255 255);
+          box-shadow: inset 600px 0px 9px 0px rgb(255 255 255);
         }
         @media (max-width: 500px) {
-          width: 100%;
           padding: 10px;
         }
       }
@@ -119,9 +119,10 @@ const SlideoutImage = styled.img`
 `
 
 const ContactForm = props => {
-  const [formSent, setFormSent] = useState(false)
+  const [formText, setFormText] = useState("SEND")
   const handleSubmit = event => {
     event.preventDefault()
+    setFormText("SENDING...")
     let contactForm = document.querySelector("#contactForm")
     const formData = new FormData(contactForm)
     fetch(contactForm.getAttribute("action"), {
@@ -133,11 +134,13 @@ const ContactForm = props => {
       body: new URLSearchParams(formData).toString(),
     }).then(res => {
       if (res) {
-        setFormSent(true)
+        setTimeout(function () {
+          setFormText("MESSAGE SENT")
+        }, 2000)
         contactForm.reset()
         setTimeout(function () {
-          setFormSent(false)
-        }, 5000)
+          setFormText("SEND ANOTHER")
+        }, 7000)
       }
     })
   }
@@ -182,7 +185,7 @@ const ContactForm = props => {
           <ul className="actions">
             <li>
               <button type="submit" className="button">
-                {!formSent ? "SEND" : "MESSAGE SENT!"}
+                {formText}
               </button>
             </li>
           </ul>

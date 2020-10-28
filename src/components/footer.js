@@ -27,6 +27,11 @@ const FooterLogos = styled.div`
   justify-content: center;
   margin-bottom: 20px;
   font-weight: 500;
+  @media (max-width: 781px) {
+    .notTablet {
+      display: none;
+    }
+  }
   @media (max-width: 520px) {
     .notMobile {
       display: none;
@@ -64,7 +69,7 @@ const Footer = () => {
           <p>BUILT WITH</p>
           <GatsbyLogo />
         </LogoContainer>
-        <LogoContainer className="notMobile">
+        <LogoContainer className="notMobile notTablet">
           <p>MANAGED WITH</p>
           <PrismicLogo />
         </LogoContainer>
