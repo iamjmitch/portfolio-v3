@@ -8,13 +8,14 @@ const Button = styled.button`
   border: none;
   font-size: 1rem;
   font-weight: 600;
-  padding: 6px 20px;
+  padding: 10px 20px;
   font-family: "Poppins", sans-serif;
   margin-top: 20px;
   cursor: pointer;
   z-index: 999;
   align-self: center;
   transition: all 0.5s;
+  text-transform: uppercase;
   &:hover {
     color: #fc2602;
     box-shadow: inset 200px 0px 9px 0px rgb(255 255 255);

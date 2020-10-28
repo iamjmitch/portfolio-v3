@@ -1,28 +1,45 @@
 import React from "react"
 import styled from "styled-components"
 import { Link, useStaticQuery } from "gatsby"
+import Button from "../button"
 
-import Portfoliobox from "./portfolioBox2"
-import PortfolioboxHeader from "./portfolioBoxHeader"
-import PortfolioboxFooter from "./portfolioBoxFooter"
+import Portfoliobox from "./portfolioBox"
 
 const PortfolioContainer = styled.div`
   display: flex;
-
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 100px 0;
   background: #151515;
+
+  h3 {
+    color: #fc2602;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+  }
+  h5 {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
   @media (max-width: 500px) {
     padding: 20px 0;
   }
 `
 
 const BoxContainer = styled.div`
-  width: 1300px;
+  max-width: 1300px;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 10px;
   .link {
     @media (max-width: 500px) {
       padding: 10px;
@@ -64,9 +81,9 @@ const Portfolio = () => {
   console.log(data)
   return (
     <PortfolioContainer>
+      <h3>My Works</h3>
+      <h5>Favourites</h5>
       <BoxContainer>
-        {/* <PortfolioboxHeader /> */}
-
         {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => (
           <Portfoliobox
             imageSrc={node.data.website_image.url}
@@ -84,6 +101,7 @@ const Portfolio = () => {
           {/* <PortfolioboxFooter /> */}
         </Link>
       </BoxContainer>
+      <Button text="See All Works" />
     </PortfolioContainer>
   )
 }

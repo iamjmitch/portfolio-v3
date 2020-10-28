@@ -14,9 +14,10 @@ const indexPage = () => {
     <div>
       <Layout>
         <Hero />
-        <Who />
         <Tech />
         <Portfolio />
+
+        <Who />
         <Contact />
       </Layout>
     </div>

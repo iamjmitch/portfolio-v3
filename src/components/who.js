@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const WhoContainer = styled.div`
   width: 100%;
-  background: #151515;
+  background: none;
   padding: 100px 0;
   display: flex;
   flex-direction: column;
