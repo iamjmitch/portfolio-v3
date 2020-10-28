@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import styled from "styled-components"
 
 import GatsbyLogo from "../images/gatsbyLogo.svg"
@@ -72,7 +72,7 @@ const Footer = () => {
       <SubText>COPYRIGHT © 2020 JAMES MITCHELL</SubText>
       <SubText>
         “Bitmoji Sticker” USED UNDER “PERSONAL USE” LICENCE. CREATE YOURS{" "}
-        <a href="https://www.bitmoji.com/" target="_blank">
+        <a href="https://www.bitmoji.com/" target="_blank" rel="noreferrer">
           HERE
         </a>
       </SubText>

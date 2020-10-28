@@ -161,20 +161,20 @@ const ContactForm = props => {
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <div>
-            <label>Name*</label>
-            <input type="text" name="name" required />
+            <label htmlFor="name">Name*</label>
+            <input type="text" name="name" id="name" required />
           </div>
           <div>
-            <label>Email*</label>
-            <input type="email" name="email" required />
+            <label htmlFor="email">Email*</label>
+            <input type="email" name="email" id="email" required />
           </div>
           <div>
-            <label>Phone</label>
-            <input type="phone" name="phone" />
+            <label htmlFor="phone">Phone</label>
+            <input type="phone" name="phone" id="phone" />
           </div>
           <div>
-            <label>Message*</label>
-            <textarea name="message" rows="10" required></textarea>
+            <label htmlFor="message">Message*</label>
+            <textarea name="message" rows="10" id="message" required></textarea>
             <span>
               <SlideoutImage src={slideOut} />
             </span>
