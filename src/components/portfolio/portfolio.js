@@ -71,6 +71,7 @@ const Portfolio = () => {
               website_name {
                 text
               }
+              backgroundcolor
             }
           }
         }
@@ -79,6 +80,7 @@ const Portfolio = () => {
   `)
 
   console.log(data)
+
   return (
     <PortfolioContainer>
       <h3>My Works</h3>
@@ -86,10 +88,12 @@ const Portfolio = () => {
       <BoxContainer>
         {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => (
           <Portfoliobox
+            key={node.data.website_name.text}
             imageSrc={node.data.website_image.url}
             websiteTitle={node.data.website_name.text}
             blurb={node.data.website_blurb.text}
             link={node.data.website_link.url}
+            backgroundC={node.data.backgroundcolor}
           />
         ))}
 

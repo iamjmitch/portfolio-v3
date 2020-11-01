@@ -40,6 +40,12 @@
       "config": {
         "label": "featured_position"
       }
+    },
+    "backgroundcolor": {
+      "type": "Color",
+      "config": {
+        "label": "backgroundColor"
+      }
     }
   }
 }

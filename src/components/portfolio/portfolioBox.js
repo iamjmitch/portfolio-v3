@@ -5,7 +5,7 @@ const BoxContainer = styled.div`
   max-width: 600px;
   width: 45%;
   margin: 10px;
-  background: #262626;
+  background: ${props => props.backgroundC};
 
   img {
     width: 100%;
@@ -65,8 +65,9 @@ const TextContainer = styled.div`
 `
 
 const Portfoliobox = props => {
+  console.log(props.backgroundC)
   return (
-    <BoxContainer>
+    <BoxContainer backgroundC={props.backgroundC}>
       <div className="imageContainer">
         <a href={props.link} target="_blank" rel="noreferrer">
           <img src={props.imageSrc} alt={`${props.websiteTitle} screenshot`} />

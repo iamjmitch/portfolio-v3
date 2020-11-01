@@ -139,7 +139,7 @@ const ContactForm = props => {
         }, 2000)
         contactForm.reset()
         setTimeout(function () {
-          setFormText("SEND ANOTHER")
+          setFormText("SEND")
         }, 7000)
       }
     })
