@@ -10,7 +10,6 @@ const BoxContainer = styled.div`
   position: relative;
   cursor: pointer;
   margin: 20px;
-  z-index: 2;
 `
 
 const ImageContainer = styled.div`
@@ -84,31 +83,31 @@ const Portfoliobox = props => {
   const [imgContainerHeight, setImageContainerHeight] = useState(null)
   const [marginAdjust, setMarginAdjust] = useState("1px")
   const [transSpeed, setTransSpeed] = useState("0.7s")
-  const [imgLoad, setImgLoad] = useState(false)
-  const [hover, setHover] = useState(false)
 
   useEffect(() => {
-    setImageHeight(imgRef.current.clientHeight)
-    setImageContainerHeight(imgContainerRef.current.clientHeight)
+    if (imgRef.current) {
+      setImageHeight(imgRef.current.clientHeight)
+      console.log(imgRef.current.clientHeight)
+    }
+    if (imgContainerRef.current) {
+      setImageContainerHeight(imgContainerRef.current.clientHeight)
+    }
     setMarginAdjust(imgContainerHeight - imgHeight)
-  }, [hover])
+  }, [imgRef, imgContainerRef])
 
   return (
-    <BoxContainer
-      onMouseOver={() => {
-        setHover(true)
-        setTransSpeed("0.7s")
-        setMarginAdjust(`${imgContainerHeight - imgHeight}px`)
-      }}
-      onMouseLeave={() => {
-        setHover(false)
-        setTransSpeed("0.2s")
-        setMarginAdjust("1px")
-      }}
-    >
+    <BoxContainer>
       <ImageContainer
         backgroundC={props.backgroundC}
+        onMouseOver={() => {
+          setTransSpeed("0.7s")
+          setMarginAdjust(`${imgContainerHeight - imgHeight}px`)
+        }}
         transSpeed={transSpeed}
+        onMouseLeave={() => {
+          setTransSpeed("0.2s")
+          setMarginAdjust("1px")
+        }}
         marginAdjust={marginAdjust}
       >
         <div className="buffer">
