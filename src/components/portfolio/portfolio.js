@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link, useStaticQuery } from "gatsby"
 import Button from "../button"
 
-import Portfoliobox from "./portfolioBox2"
+import Portfoliobox from "./portfolioBox"
 
 const PortfolioContainer = styled.div`
   display: flex;
