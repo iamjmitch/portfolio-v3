@@ -83,7 +83,7 @@ const Who = () => {
   return (
     <WhoContainer>
       <AvatarContainer data-sal="slide-left" data-sal-easing="ease">
-        <Avatar src={avatarURL} alt="Avatar" />
+        <Avatar className="lazyload" data-src={avatarURL} alt="Avatar" />
       </AvatarContainer>
       <AvatarText data-sal="slide-right" data-sal-easing="ease">
         <h4>{heading}</h4>
