@@ -162,7 +162,11 @@ const Portfoliobox = props => {
               ref={imgRef}
             />
           </div>
-          <img className="laptopImg" src={laptop} alt="Image of a laptop" />
+          <img
+            className="laptopImg lazyload"
+            data-src={laptop}
+            alt="Image of a laptop"
+          />
         </div>
       </ImageContainer>
       <TextContainer>
