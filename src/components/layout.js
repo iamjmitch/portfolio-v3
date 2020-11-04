@@ -6,6 +6,7 @@ import Footer from "./footer"
 
 const PageLayout = styled.div`
   background: #0b0a0a;
+  overflow: hidden;
 `
 
 const Layout = props => {
