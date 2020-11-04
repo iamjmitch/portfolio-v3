@@ -35,7 +35,7 @@ const Box = styled.div`
 
 const TechBoxHeader = props => {
   return (
-    <Box>
+    <Box data-sal="slide-up" data-sal-easing="ease" data-sal-delay="200">
       <p>
         My<br></br>Stack
       </p>

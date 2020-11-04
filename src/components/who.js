@@ -82,10 +82,10 @@ const Who = () => {
 
   return (
     <WhoContainer>
-      <AvatarContainer>
+      <AvatarContainer data-sal="slide-left" data-sal-easing="ease">
         <Avatar src={avatarURL} alt="Avatar" />
       </AvatarContainer>
-      <AvatarText>
+      <AvatarText data-sal="slide-right" data-sal-easing="ease">
         <h4>{heading}</h4>
         <p> {blurb}</p>
       </AvatarText>

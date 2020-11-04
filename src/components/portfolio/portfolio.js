@@ -83,8 +83,12 @@ const Portfolio = () => {
 
   return (
     <PortfolioContainer>
-      <h3>My Works</h3>
-      <h5>Favourites</h5>
+      <h3 data-sal="slide-left" data-sal-easing="ease" data-sal-delay="200">
+        My Works
+      </h3>
+      <h5 data-sal="slide-right" data-sal-easing="ease" data-sal-delay="200">
+        Favourites
+      </h5>
       <BoxContainer>
         {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => (
           <Portfoliobox

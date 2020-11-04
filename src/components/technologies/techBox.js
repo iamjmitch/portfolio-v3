@@ -69,7 +69,11 @@ const Box = styled.div`
 
 const TechBox = props => {
   return (
-    <BoxContainer>
+    <BoxContainer
+      data-sal="slide-up"
+      data-sal-easing="ease"
+      data-sal-delay="200"
+    >
       <Box key={props.hoverText}>
         <img src={props.imageSrc} alt={props.alt} />
         <p>{props.hoverText}</p>

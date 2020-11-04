@@ -149,8 +149,16 @@ const ContactForm = props => {
     <Container>
       <FormContainer>
         <Heading>
-          <h4>CONTACT ME</h4>
-          <h5>* REQUIRED FIELDS</h5>
+          <h4 data-sal="slide-left" data-sal-easing="ease" data-sal-delay="200">
+            CONTACT ME
+          </h4>
+          <h5
+            data-sal="slide-right"
+            data-sal-easing="ease"
+            data-sal-delay="200"
+          >
+            * REQUIRED FIELDS
+          </h5>
         </Heading>
         <form
           method="post"
@@ -163,19 +171,35 @@ const ContactForm = props => {
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
-          <div>
+          <div
+            data-sal="slide-right"
+            data-sal-easing="ease"
+            data-sal-delay="200"
+          >
             <label htmlFor="name">Name*</label>
             <input type="text" name="name" id="name" required />
           </div>
-          <div>
+          <div
+            data-sal="slide-left"
+            data-sal-easing="ease"
+            data-sal-delay="200"
+          >
             <label htmlFor="email">Email*</label>
             <input type="email" name="email" id="email" required />
           </div>
-          <div>
+          <div
+            data-sal="slide-right"
+            data-sal-easing="ease"
+            data-sal-delay="200"
+          >
             <label htmlFor="phone">Phone</label>
             <input type="phone" name="phone" id="phone" />
           </div>
-          <div>
+          <div
+            data-sal="slide-left"
+            data-sal-easing="ease"
+            data-sal-delay="200"
+          >
             <label htmlFor="message">Message*</label>
             <textarea name="message" rows="10" id="message" required></textarea>
             <span>
@@ -184,7 +208,13 @@ const ContactForm = props => {
           </div>
           <ul className="actions">
             <li>
-              <button type="submit" className="button">
+              <button
+                type="submit"
+                className="button"
+                data-sal="slide-up"
+                data-sal-easing="ease"
+                data-sal-delay="200"
+              >
                 {formText}
               </button>
             </li>

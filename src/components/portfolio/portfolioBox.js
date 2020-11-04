@@ -145,7 +145,7 @@ const Portfoliobox = props => {
   // }, [imgRef, imgContainerRef])
 
   return (
-    <BoxContainer>
+    <BoxContainer data-sal="slide-up" data-sal-easing="ease">
       <ImageContainer
         backgroundC={props.backgroundC}
         onMouseEnter={triggerSlide}

@@ -135,7 +135,11 @@ const TechBoxFooter = () => {
   `)
 
   return (
-    <BoxContainer>
+    <BoxContainer
+      data-sal="slide-up"
+      data-sal-easing="ease"
+      data-sal-delay="200"
+    >
       <a href="https://github.com/iamjmitch" target="_blank" rel="noreferrer">
         <Box>
           <span className="onHover">
