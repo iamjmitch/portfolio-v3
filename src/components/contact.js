@@ -203,7 +203,7 @@ const ContactForm = props => {
             <label htmlFor="message">Message*</label>
             <textarea name="message" rows="10" id="message" required></textarea>
             <span>
-              <SlideoutImage src={slideOut} />
+              <SlideoutImage className="lazyload" data-src={slideOut} />
             </span>
           </div>
           <ul className="actions">

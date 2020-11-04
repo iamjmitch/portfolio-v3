@@ -156,8 +156,8 @@ const Portfoliobox = props => {
         <div className="buffer">
           <div className="innerImgContainer" ref={imgContainerRef}>
             <img
-              className="innerImg"
-              src={props.imageSrc}
+              className="innerImg lazyload"
+              data-src={props.imageSrc}
               alt={`${props.websiteTitle} screenshot`}
               ref={imgRef}
             />

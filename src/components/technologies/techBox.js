@@ -75,7 +75,7 @@ const TechBox = props => {
       data-sal-delay="200"
     >
       <Box key={props.hoverText}>
-        <img src={props.imageSrc} alt={props.alt} />
+        <img className="lazyload" data-src={props.imageSrc} alt={props.alt} />
         <p>{props.hoverText}</p>
       </Box>
     </BoxContainer>
