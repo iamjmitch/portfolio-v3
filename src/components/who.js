@@ -25,15 +25,16 @@ const AvatarContainer = styled.div`
   display: flex;
   border-radius: 50%;
   padding: 10px 10px 0 10px;
+  position: relative;
 `
 
 const Avatar = styled.img`
-  min-width: 100%;
-  max-height: auto;
-  object-fit: contain;
-  transform: rotate(-5deg);
-
+  width: 68%;
   margin-left: -5px;
+  margin-top: 0px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
 `
 
 const AvatarText = styled.div`
