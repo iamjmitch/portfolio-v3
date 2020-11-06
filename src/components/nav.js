@@ -18,6 +18,9 @@ const StyledNav = styled.div`
   border-left: solid 5px white;
   transition: 0.5s;
   transform: translateX(${props => (props.isActive ? "0%" : "100%")});
+  @media (max-width: 500px) {
+    width: 100vw;
+  }
 `
 
 const StyledLink = styled(props => <Link {...props} />)`
