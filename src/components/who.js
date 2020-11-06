@@ -81,7 +81,7 @@ const Who = () => {
   const blurb = data.allPrismicAboutBlurb.edges[0].node.data.blurb.text
 
   return (
-    <WhoContainer>
+    <WhoContainer id="about">
       <AvatarContainer data-sal="slide-left" data-sal-easing="ease">
         <Avatar className="lazyload" data-src={avatarURL} alt="Avatar" />
       </AvatarContainer>

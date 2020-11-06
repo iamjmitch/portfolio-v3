@@ -16,7 +16,6 @@ const indexPage = () => {
         <Hero />
         <Tech />
         <Portfolio />
-
         <Who />
         <Contact />
       </Layout>

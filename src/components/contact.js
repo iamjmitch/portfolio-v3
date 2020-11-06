@@ -146,7 +146,7 @@ const ContactForm = props => {
   }
 
   return (
-    <Container>
+    <Container id="contact">
       <FormContainer>
         <Heading>
           <h4 data-sal="slide-left" data-sal-easing="ease" data-sal-delay="200">

@@ -48,7 +48,7 @@ const Tech = () => {
   `)
 
   return (
-    <TechContainer>
+    <TechContainer id="skills">
       <BoxContainer>
         <TechboxHeader />
 
