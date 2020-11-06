@@ -14,7 +14,7 @@ const Layout = props => {
   return (
     <PageLayout style={{ minWidth: "350px" }}>
       <Nav />
-      <Header />
+
       {props.children}
       <Footer />
     </PageLayout>
