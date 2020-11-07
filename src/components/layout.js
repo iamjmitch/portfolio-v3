@@ -6,6 +6,7 @@ import Nav from "../components/nav"
 const PageLayout = styled.div`
   background: #0b0a0a;
   overflow: hidden;
+  width: 100%;
 `
 
 const Layout = props => {

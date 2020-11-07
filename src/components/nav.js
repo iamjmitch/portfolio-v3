@@ -1,41 +1,124 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-
 import Logo from "../images/logo.svg"
+
+import Twitter from "../images/twitter.svg"
+import Linkedin from "../images/linkedin.svg"
+import Github from "../images/github.svg"
 
 const StyledNav = styled.div`
   height: 100vh;
-  width: 20vw;
-  min-width: 250px;
+  width: 100%;
   position: fixed;
   right: 0;
   top: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   z-index: 9999;
   justify-content: center;
   align-items: center;
-  background: #fc2602;
-  border-left: solid 5px white;
+  background: #000000f5;
   transition: 0.5s;
   transform: translateX(${props => (props.isActive ? "0%" : "100%")});
-  @media (max-width: 500px) {
-    width: 100vw;
-    border: none;
+  .linkContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 1055px) {
+    .linkContainer {
+      flex-direction: column;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg {
+      margin-bottom: 150px;
+      width: 10vw;
+      min-width: 200px;
+      height: auto;
+      @media (max-height: 900px) {
+        margin-bottom: 70px;
+      }
+      @media (max-height: 390px) {
+        display: none;
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    @media (max-height: 900px) {
+      margin-top: 70px;
+    }
+    @media (max-height: 700px) {
+      display: none;
+    }
+    a {
+      &.orange {
+        &:hover {
+          svg path {
+            transition: 0.5s ease;
+            fill: white;
+          }
+        }
+      }
+      &.white {
+        &:hover {
+          svg path {
+            transition: 0.5s ease;
+            fill: #fc2606;
+          }
+        }
+      }
+      svg {
+        width: 40px;
+        height: auto;
+        min-width: unset;
+        display: block;
+        margin: 5px 20px;
+        transition: 0.5s ease;
+      }
+    }
   }
 `
 
 const StyledLink = styled(props => <Link {...props} />)`
-  color: white;
   text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
-  transition: 0.5s ease-in;
-  padding: 10px 0;
-  &:hover {
-    color: #0b0a0a;
-    transform: scale(1.2);
+  transition: 0.2s ease;
+  margin: 0 30px;
+  text-transform: uppercase;
+  line-height: 2rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  &.orange {
+    color: #fc2602;
+    transition: 0.5s ease;
+    &:hover {
+      border-bottom: 2px solid white;
+    }
+  }
+  &.white {
+    color: white;
+    transition: 0.5s ease;
+    &:hover {
+      border-bottom: 2px solid #fc2602;
+    }
+  }
+
+  @media (max-width: 1055px) {
+    padding: 10px 0;
   }
 `
 
@@ -44,7 +127,6 @@ const StyledNavButton = styled.div`
   height: 1.5vw;
   min-width: 35px;
   min-height: 35px;
-
   background: ${props => (props.isActive ? "white" : "#fc2602")};
   border-radius: 50%;
   z-index: 10000;
@@ -70,7 +152,7 @@ const StyledNavButton = styled.div`
   }
   .two {
     transition: 0.5s;
-    transform: translateX(${props => (props.isActive ? "200%" : "0%")});
+    transform: translateX(${props => (props.isActive ? "300%" : "0%")});
   }
   .three {
     transition: 0.5s;
@@ -106,7 +188,7 @@ const Navbar = () => {
     <nav>
       <NavContainer>
         <Link to="/">
-          <Logo />
+          <Logo className="logo" />
         </Link>
         <StyledNavButton onClick={handleToggle} isActive={isActive}>
           <div className="one"></div>
@@ -114,21 +196,61 @@ const Navbar = () => {
           <div className="three"></div>
         </StyledNavButton>
         <StyledNav isActive={isActive}>
-          <StyledLink onClick={handleToggle} to="/">
-            Home
-          </StyledLink>
-          <StyledLink onClick={handleToggle} to="/#skills">
-            Skills
-          </StyledLink>
-          <StyledLink onClick={handleToggle} to="/creations">
-            Portfolio
-          </StyledLink>
-          <StyledLink onClick={handleToggle} to="/#about">
-            About Me
-          </StyledLink>
-          <StyledLink onClick={handleToggle} to="/#contact">
-            Contact Me
-          </StyledLink>
+          <div className="container">
+            <Logo />
+            <div className="linkContainer">
+              <StyledLink className="orange" onClick={handleToggle} to="/">
+                Home
+              </StyledLink>
+              <StyledLink
+                className="white"
+                onClick={handleToggle}
+                to="/#skills"
+              >
+                Skills
+              </StyledLink>
+              <StyledLink
+                className="orange"
+                onClick={handleToggle}
+                to="/creations"
+              >
+                Portfolio
+              </StyledLink>
+              <StyledLink className="white" onClick={handleToggle} to="/#about">
+                About Me
+              </StyledLink>
+              <StyledLink
+                className="orange"
+                onClick={handleToggle}
+                to="/#contact"
+              >
+                Contact Me
+              </StyledLink>
+            </div>
+            <div className="icons">
+              <a
+                className="orange"
+                href="https://twitter.com/james_iamjmitch"
+                target="_blank"
+              >
+                <Twitter />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/james-mitchell-a91057150/"
+                target="_blank"
+                className="orange"
+              >
+                <Linkedin />
+              </a>
+              <a
+                href="https://github.com/iamjmitch"
+                target="_blank"
+                className="orange"
+              >
+                <Github />
+              </a>
+            </div>
+          </div>
         </StyledNav>
       </NavContainer>
     </nav>
