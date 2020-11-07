@@ -11,7 +11,7 @@ import Contact from "../components/contact"
 
 const indexPage = () => {
   return (
-    <div style={{ width: "100vw", maxWidth: "100%" }}>
+    <div>
       <Layout>
         <Hero />
         <Tech />
