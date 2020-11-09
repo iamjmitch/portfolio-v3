@@ -39,7 +39,7 @@ const Span = styled.span`
   left: 0;
   background-color: #000000e0;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
