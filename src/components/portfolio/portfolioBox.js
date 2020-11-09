@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useCallback,
-  useLayoutEffect,
-} from "react"
+import React, { useState, useRef } from "react"
 import styled from "styled-components"
 import laptop from "../../images/laptop.png"
 

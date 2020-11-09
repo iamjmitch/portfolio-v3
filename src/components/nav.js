@@ -60,7 +60,7 @@ const StyledNav = styled.div`
     @media (max-height: 900px) {
       margin-top: 70px;
     }
-    @media (max-height: 700px) {
+    @media (max-height: 500px) {
       display: none;
     }
     a {
@@ -127,7 +127,7 @@ const StyledNavButton = styled.div`
   height: 1.5vw;
   min-width: 35px;
   min-height: 35px;
-  background: ${props => (props.isActive ? "white" : "#fc2602")};
+  background: ${props => (props.isActive ? "white" : "transparent")};
   border-radius: 50%;
   z-index: 10000;
   display: flex;
@@ -197,7 +197,6 @@ const Navbar = () => {
         </StyledNavButton>
         <StyledNav isActive={isActive}>
           <div className="container">
-            <Logo />
             <div className="linkContainer">
               <StyledLink className="orange" onClick={handleToggle} to="/">
                 Home
