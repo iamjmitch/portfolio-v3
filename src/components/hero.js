@@ -109,11 +109,7 @@ const Hero = () => {
           <Button text="SEE MY WORK" />
         </HeroContent>
       </Span>
-      <HeroImage
-        className="lazyload"
-        data-src={HeroImageJPG}
-        alt="Image of laptop"
-      />
+      <HeroImage src={HeroImageJPG} alt="Image of laptop" />
       <Video autoPlay loop muted>
         <source src={HeroVideoWebm} type="video/webm" />
         <source src={HeroVideoMp4} type="video/mp4" />
