@@ -99,11 +99,12 @@ const Hero = () => {
         <HeroContent>
           <h1>HELLO,</h1>
           <h2>
-            MY NAME IS <b>JAMES</b>
+            MY NAME IS <b>JAMES</b>.
           </h2>
           <h3>
-            I'M A JUNIOR <br className="mobileOnly" />
-            <b>FRONT-END DEVELOPER</b>
+            I CREATE STREAMLINED
+            <br className="mobileOnly" />
+            <b> USER EXPERIENCES</b>.
           </h3>
           <Button text="SEE MY WORK" />
         </HeroContent>
