@@ -104,7 +104,7 @@ const Hero = () => {
           <h3>
             I CREATE STREAMLINED
             <br className="mobileOnly" />
-            <b> USER EXPERIENCES</b>
+            <b> WEB EXPERIENCES</b>
           </h3>
           <Button text="SEE MY WORK" />
         </HeroContent>
