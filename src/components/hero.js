@@ -92,13 +92,6 @@ const HeroContent = styled.div`
 `
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false)
-  useEffect(() => {
-    // prevent hero video/image being loaded is not needed
-    if (document.body.clientWidth <= 600) {
-      setIsMobile(true)
-    }
-  }, [document.body.clientWidth])
   return (
     <HeroContainer>
       <Span>
@@ -116,12 +109,12 @@ const Hero = () => {
       </Span>
       <HeroImage
         className="lazyload"
-        data-src={!isMobile ? "" : HeroImageJPG}
+        data-src={HeroImageJPG}
         alt="Image of laptop"
       />
       <Video autoPlay loop muted>
-        <source src={isMobile ? "" : HeroVideoWebm} type="video/webm" />
-        <source src={isMobile ? "" : HeroVideoMp4} type="video/mp4" />
+        <source src={HeroVideoWebm} type="video/webm" />
+        <source src={HeroVideoMp4} type="video/mp4" />
       </Video>
     </HeroContainer>
   )
