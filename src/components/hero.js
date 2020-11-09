@@ -102,14 +102,17 @@ const Hero = () => {
             MY NAME IS <b>JAMES</b>
           </h2>
           <h3>
-            I CREATE STREAMLINED
-            <br className="mobileOnly" />
-            <b> WEB EXPERIENCES</b>
+            I'M A JUNIOR <br className="mobileOnly" />
+            <b>FRONT-END DEVELOPER</b>
           </h3>
           <Button text="SEE MY WORK" />
         </HeroContent>
       </Span>
-      <HeroImage src={HeroImageJPG} alt="Image of laptop" />
+      <HeroImage
+        className="lazyload"
+        data-src={HeroImageJPG}
+        alt="Image of laptop"
+      />
       <Video autoPlay loop muted>
         <source src={HeroVideoWebm} type="video/webm" />
         <source src={HeroVideoMp4} type="video/mp4" />
