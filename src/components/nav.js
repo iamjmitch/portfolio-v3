@@ -229,7 +229,7 @@ const Navbar = () => {
             <div className="icons">
               <a
                 className="orange"
-                href="https://twitter.com/james_iamjmitch"
+                href="https://twitter.com/iamjmitch"
                 target="_blank"
               >
                 <Twitter />
