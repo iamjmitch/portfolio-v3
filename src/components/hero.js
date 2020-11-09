@@ -57,6 +57,7 @@ const HeroContent = styled.div`
   text-align: left;
   display: flex;
   flex-direction: column;
+  padding: 0 20px;
   h1 {
     font-size: 5em;
     line-height: 76px;
