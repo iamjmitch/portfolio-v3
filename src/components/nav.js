@@ -230,6 +230,7 @@ const Navbar = () => {
               <a
                 className="orange"
                 href="https://twitter.com/iamjmitch"
+                rel="noreferrer"
                 target="_blank"
               >
                 <Twitter />
@@ -237,6 +238,7 @@ const Navbar = () => {
               <a
                 href="https://www.linkedin.com/in/james-mitchell-a91057150/"
                 target="_blank"
+                rel="noreferrer"
                 className="orange"
               >
                 <Linkedin />
@@ -244,6 +246,7 @@ const Navbar = () => {
               <a
                 href="https://github.com/iamjmitch"
                 target="_blank"
+                rel="noreferrer"
                 className="orange"
               >
                 <Github />
