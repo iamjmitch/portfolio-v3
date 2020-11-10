@@ -9,12 +9,10 @@ const Container404 = styled.div`
   min-height: 100vh;
   display: flex;
   padding-top: 65px;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #0b0a0a;
-
   overflow: hidden;
 `
 
@@ -27,14 +25,12 @@ const Content = styled.div`
   @media (max-width: 600px) {
     margin: 0 15px;
   }
-
   img {
     @media (max-width: 600px) {
       width: 40vw;
       height: auto;
     }
   }
-
   .textContainer {
     flex-direction: column;
     justify-content: center;
@@ -42,7 +38,6 @@ const Content = styled.div`
     padding: 10px 50px;
     background: transparent;
     border: 2px solid #fc2602;
-
     h1 {
       color: #fc2602;
       font-size: 6rem;
