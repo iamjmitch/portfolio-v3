@@ -16,6 +16,7 @@ const SubText = styled.p`
   font-size: 0.7rem;
   text-align: center;
   opacity: 0.6;
+  padding: 0 20px;
   a {
     text-decoration: none;
     color: white;

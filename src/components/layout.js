@@ -7,6 +7,7 @@ const PageLayout = styled.div`
   background: #0b0a0a;
   overflow: hidden;
   width: 100%;
+  min-height: 100vh;
 `
 
 const Layout = props => {
