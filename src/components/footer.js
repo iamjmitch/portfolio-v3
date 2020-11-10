@@ -10,6 +10,8 @@ const StyledFooter = styled.div`
   padding: 30px 0;
   color: white;
   font-family: "Poppins", sans-serif;
+  background: #0b0a0a;
+  width: 100%;
 `
 
 const SubText = styled.p`

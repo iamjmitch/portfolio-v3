@@ -14,6 +14,7 @@ const Container404 = styled.div`
   justify-content: center;
   align-items: center;
   background: #0b0a0a;
+
   overflow: hidden;
 `
 
