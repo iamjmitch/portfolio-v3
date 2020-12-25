@@ -1,6 +1,7 @@
 import React from "react"
 // import { Link } from "gatsby"
 import "../styles/index.css"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
@@ -12,6 +13,7 @@ import Contact from "../components/contact"
 const indexPage = () => {
   return (
     <div>
+      <Helmet title="James Mitchell - Front-End Developer" defer={false} />
       <Layout>
         <Hero />
         <Tech />
