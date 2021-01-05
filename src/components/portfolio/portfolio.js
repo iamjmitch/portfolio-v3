@@ -116,7 +116,8 @@ const Portfolio = () => {
         My Works
       </h3>
       <h5 data-sal="slide-right" data-sal-easing="ease" data-sal-delay="200">
-        Favourites
+        {isToggle === false && "Favourites"}
+        {isToggle === true && "All"}
       </h5>
       <BoxContainer>
         {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => {
