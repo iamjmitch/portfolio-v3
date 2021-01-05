@@ -1,7 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { Link, useStaticQuery } from "gatsby"
-import Button from "../button"
 
 import Portfoliobox from "./portfolioBox"
 
@@ -47,17 +46,42 @@ const BoxContainer = styled.div`
   }
 `
 
+const Button = styled.button`
+  background: #fc2602;
+  color: white;
+  min-width: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  cursor: pointer;
+  z-index: 999;
+  align-self: center;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  &:hover {
+    color: #fc2602;
+    box-shadow: inset 200px 0px 9px 0px rgb(255 255 255);
+  }
+  @media (max-width: 500px) {
+    font-size: 1.3rem;
+    padding: 10px 10px;
+  }
+`
+
 const Portfolio = () => {
   // will only pull data for entires marked "featured=true"
   const data = useStaticQuery(graphql`
     query portfolio {
       allPrismicPortfolioPiece(
-        filter: { data: { website_featured: { eq: true } } }
         sort: { fields: data___featured_position, order: ASC }
       ) {
         edges {
           node {
             data {
+              website_featured
               featured_position
               website_blurb {
                 text
@@ -79,7 +103,12 @@ const Portfolio = () => {
     }
   `)
 
-  console.log(data)
+  const [isToggle, setIsToggle] = useState(false)
+
+  const handleClick = () => {
+    setIsToggle(true)
+    console.log(isToggle)
+  }
 
   return (
     <PortfolioContainer>
@@ -90,16 +119,34 @@ const Portfolio = () => {
         Favourites
       </h5>
       <BoxContainer>
-        {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => (
-          <Portfoliobox
-            key={node.data.website_name.text}
-            imageSrc={node.data.website_image.url}
-            websiteTitle={node.data.website_name.text}
-            blurb={node.data.website_blurb.text}
-            link={node.data.website_link.url}
-            backgroundC={node.data.backgroundcolor}
-          />
-        ))}
+        {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => {
+          if (node.data.website_featured === true) {
+            return (
+              <Portfoliobox
+                key={node.data.website_name.text}
+                imageSrc={node.data.website_image.url}
+                websiteTitle={node.data.website_name.text}
+                blurb={node.data.website_blurb.text}
+                link={node.data.website_link.url}
+                backgroundC={node.data.backgroundcolor}
+              />
+            )
+          } else if (
+            node.data.website_featured === false &&
+            isToggle === true
+          ) {
+            return (
+              <Portfoliobox
+                key={node.data.website_name.text}
+                imageSrc={node.data.website_image.url}
+                websiteTitle={node.data.website_name.text}
+                blurb={node.data.website_blurb.text}
+                link={node.data.website_link.url}
+                backgroundC={node.data.backgroundcolor}
+              />
+            )
+          }
+        })}
 
         <Link
           className="link"
@@ -109,7 +156,9 @@ const Portfolio = () => {
           {/* <PortfolioboxFooter /> */}
         </Link>
       </BoxContainer>
-      <Button text="See All Works" />
+      {isToggle === false && (
+        <Button onClick={handleClick}>See All Works</Button>
+      )}
     </PortfolioContainer>
   )
 }
