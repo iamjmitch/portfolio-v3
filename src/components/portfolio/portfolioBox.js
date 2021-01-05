@@ -124,7 +124,6 @@ const Portfoliobox = props => {
   function returnSlide() {
     setMarginAdjust("1px")
     setTransSpeed("0.2s")
-    console.log("here3")
   }
 
   // useLayoutEffect(() => {
