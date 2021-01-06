@@ -110,7 +110,7 @@ const Hero = () => {
             I'M A JUNIOR <br className="mobileOnly" />
             <b>FRONT-END DEVELOPER</b>
           </h3>
-          <Link style={{ margin: "0 auto" }} to="/#Works">
+          <Link style={{ margin: "0 auto" }} to="/#works">
             <Button text="SEE MY WORK" />
           </Link>
         </HeroContent>

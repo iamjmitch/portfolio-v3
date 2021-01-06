@@ -116,7 +116,7 @@ const Portfolio = () => {
         data-sal="slide-left"
         data-sal-easing="ease"
         data-sal-delay="200"
-        id="Works"
+        id="works"
       >
         My Works
       </h3>

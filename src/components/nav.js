@@ -211,7 +211,7 @@ const Navbar = () => {
               <StyledLink
                 className="orange"
                 onClick={handleToggle}
-                to="/creations"
+                to="/#works"
               >
                 Portfolio
               </StyledLink>
