@@ -158,7 +158,7 @@ const Portfoliobox = props => {
           <img
             className="laptopImg lazyload"
             data-src={laptop}
-            alt="Image of a laptop"
+            alt="decorative"
           />
         </div>
       </ImageContainer>

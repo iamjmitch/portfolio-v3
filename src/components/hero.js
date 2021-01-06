@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 import Button from "./button"
@@ -6,7 +6,6 @@ import Button from "./button"
 import HeroVideoMp4 from "../video/hero.mp4"
 import HeroVideoWebm from "../video/hero.webm"
 import HeroImageJPG from "../images/mobileHero.jpg"
-import HeroImageWEBP from "../images/mobileHero.webp"
 
 const HeroContainer = styled.div`
   height: 100vh;
@@ -92,6 +91,11 @@ const HeroContent = styled.div`
   }
 `
 
+const handleClick = () => {
+  if (typeof window !== "undefined") {
+    window.location.href = "#Works"
+  }
+}
 const Hero = () => {
   return (
     <HeroContainer>
@@ -105,14 +109,10 @@ const Hero = () => {
             I'M A JUNIOR <br className="mobileOnly" />
             <b>FRONT-END DEVELOPER</b>
           </h3>
-          <Button text="SEE MY WORK" />
+          <Button text="SEE MY WORK" onClick={handleClick} />
         </HeroContent>
       </Span>
-      <HeroImage
-        className="lazyload"
-        data-src={HeroImageJPG}
-        alt="Image of laptop"
-      />
+      <HeroImage className="lazyload" data-src={HeroImageJPG} alt="laptop" />
       <Video autoPlay loop muted>
         <source src={HeroVideoWebm} type="video/webm" />
         <source src={HeroVideoMp4} type="video/mp4" />

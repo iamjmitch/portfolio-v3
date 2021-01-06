@@ -112,7 +112,12 @@ const Portfolio = () => {
 
   return (
     <PortfolioContainer>
-      <h3 data-sal="slide-left" data-sal-easing="ease" data-sal-delay="200">
+      <h3
+        data-sal="slide-left"
+        data-sal-easing="ease"
+        data-sal-delay="200"
+        id="Works"
+      >
         My Works
       </h3>
       <h5 data-sal="slide-right" data-sal-easing="ease" data-sal-delay="200">
@@ -122,6 +127,7 @@ const Portfolio = () => {
       <BoxContainer>
         {data.allPrismicPortfolioPiece.edges.map(({ node }, i) => {
           if (node.data.website_featured === true) {
+            //initially only shows website tagged as featured in prismic
             return (
               <Portfoliobox
                 key={node.data.website_name.text}
@@ -137,6 +143,7 @@ const Portfolio = () => {
             isToggle === true
           ) {
             return (
+              //shows all portfolio pieces
               <Portfoliobox
                 key={node.data.website_name.text}
                 imageSrc={node.data.website_image.url}

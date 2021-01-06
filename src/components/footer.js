@@ -68,10 +68,12 @@ const Footer = () => {
           <p>DESIGNED AND DEVLOPED BY</p>
           <IamjmitchLogo />
         </LogoContainer>
+        {/* hidden on mobile */}
         <LogoContainer className="notMobile">
           <p>BUILT WITH</p>
           <GatsbyLogo />
         </LogoContainer>
+        {/* hidden on mobile */}
         <LogoContainer className="notMobile notTablet">
           <p>MANAGED WITH</p>
           <PrismicLogo />
