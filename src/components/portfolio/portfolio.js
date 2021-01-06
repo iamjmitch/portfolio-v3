@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { Link, useStaticQuery } from "gatsby"
+import { useStaticQuery } from "gatsby"
 
 import Portfoliobox from "./portfolioBox"
 
@@ -111,13 +111,8 @@ const Portfolio = () => {
   }
 
   return (
-    <PortfolioContainer>
-      <h3
-        data-sal="slide-left"
-        data-sal-easing="ease"
-        data-sal-delay="200"
-        id="works"
-      >
+    <PortfolioContainer id="works">
+      <h3 data-sal="slide-left" data-sal-easing="ease" data-sal-delay="200">
         My Works
       </h3>
       <h5 data-sal="slide-right" data-sal-easing="ease" data-sal-delay="200">
@@ -155,14 +150,6 @@ const Portfolio = () => {
             )
           }
         })}
-
-        <Link
-          className="link"
-          to="/creations"
-          style={{ textDecoration: "none" }}
-        >
-          {/* <PortfolioboxFooter /> */}
-        </Link>
       </BoxContainer>
       {isToggle === false && (
         <Button onClick={handleClick}>See All Works</Button>
