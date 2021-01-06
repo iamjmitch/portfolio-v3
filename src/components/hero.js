@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 import Button from "./button"
@@ -109,7 +110,9 @@ const Hero = () => {
             I'M A JUNIOR <br className="mobileOnly" />
             <b>FRONT-END DEVELOPER</b>
           </h3>
-          <Button text="SEE MY WORK" onClick={handleClick} />
+          <Link to="/#Works">
+            <Button text="SEE MY WORK" />
+          </Link>
         </HeroContent>
       </Span>
       <HeroImage className="lazyload" data-src={HeroImageJPG} alt="laptop" />
