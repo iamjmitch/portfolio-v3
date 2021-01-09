@@ -243,7 +243,7 @@ const ContactForm = props => {
                 <Container style={{ background: "transparent" }}>
                   <img
                     style={{
-                      width: "50px",
+                      width: "63px",
                       paddingBottom: "5px",
                     }}
                     src="../captcha.png"
