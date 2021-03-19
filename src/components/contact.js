@@ -174,6 +174,7 @@ const ContactForm = props => {
       }
     } else {
       if (
+        //checks email and message for website domain as it seems to be a common trend for detecting
         inputtedEmail.includes("iamjmitch.com") ||
         messageData.includes("iamjmitch")
       ) {
