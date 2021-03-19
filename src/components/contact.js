@@ -173,9 +173,13 @@ const ContactForm = props => {
         setFormText("Try Again")
       }
     } else {
-      if (inputtedEmail.includes("iamjmitch")) {
+      if (
+        inputtedEmail.includes("iamjmitch.com") ||
+        messageData.includes("iamjmitch")
+      ) {
+        //No form data sent
         setTimeout(function () {
-          setFormText("ERROR, TRY AGAIN LATER")
+          setFormText("Probable Spam Warning")
         }, 2000)
       } else {
         handleSend()
@@ -207,6 +211,13 @@ const ContactForm = props => {
           id="contactForm"
           onSubmit={handleSubmit}
         >
+          <input type="hidden" name="subject" value="New Website Enquiry" />
+          <input
+            type="hidden"
+            name="isSpam"
+            value={isBot ? "Probably" : "No"}
+          />
+
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <div
