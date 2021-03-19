@@ -154,27 +154,30 @@ const ContactForm = props => {
           }, 7000)
         }
       })
-    }
 
-    if (
-      //if the message box contains any sort of link to a website, validation will fail and ask to prove if human. Capture Question is image
+      if (
+        //if the message box contains any sort of link to a website, validation will fail and ask to prove if human. Capture Question is image
 
-      messageData.includes("http") ||
-      messageData.includes(".com") ||
-      messageData.includes("www.")
-    ) {
-      // triggers the initial bot check box
-      if (!isBot) {
-        setIsBot(true)
-        setFormText("Please Prove You Are Human")
-        // currently hard coded Question Answer. may make it slightly more challenging based on success rate of blocking bots
-      } else if (honeyPVal.value === "4" || honeyPVal.value === 4 && inputtedEmail.includes("iamjmitch.com") === false && messageData.includes("iamjmitch") === false) {
-        handleSend()
+        messageData.includes("http") ||
+        messageData.includes(".com") ||
+        messageData.includes("www.")
+      ) {
+        // triggers the initial bot check box
+        if (!isBot) {
+          setIsBot(true)
+          setFormText("Please Prove You Are Human")
+          // currently hard coded Question Answer. may make it slightly more challenging based on success rate of blocking bots
+        } else if (
+          honeyPVal.value === "4" ||
+          (honeyPVal.value === 4 &&
+            inputtedEmail.includes("iamjmitch.com") === false &&
+            messageData.includes("iamjmitch") === false)
+        ) {
+          handleSend()
+        } else {
+          setFormText("Try Again")
+        }
       } else {
-        setFormText("Try Again")
-      }
-    } else {
-        
         handleSend()
       }
     }
