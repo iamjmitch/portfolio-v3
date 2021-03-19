@@ -62,7 +62,6 @@ const FormContainer = styled.div`
       div {
         background: #fc2602;
         margin: 10px 0;
-
         transition: 0.3s;
         p {
           color: white;
@@ -154,29 +153,42 @@ const ContactForm = props => {
           }, 7000)
         }
       })
+    }
 
-      if (
-        //if the message box contains any sort of link to a website, validation will fail and ask to prove if human. Capture Question is image
+    if (
+      //if the message box contains any sort of link to a website, validation will fail and ask to prove if human. Capture Question is image
 
-        messageData.includes("http") ||
-        messageData.includes(".com") ||
-        messageData.includes("www.")
+      messageData.includes("http") ||
+      messageData.includes(".com") ||
+      messageData.includes("www.")
+    ) {
+      // triggers the initial bot check box
+      if (!isBot) {
+        setIsBot(true)
+        setFormText("Please Prove You Are Human")
+        // currently hard coded Question Answer. may make it slightly more challenging based on success rate of blocking bots
+      } else if (
+        inputtedEmail.inlcude("iamjmitch.com") ||
+        messageData.includes("iamjmitch")
       ) {
-        // triggers the initial bot check box
-        if (!isBot) {
-          setIsBot(true)
-          setFormText("Please Prove You Are Human")
-          // currently hard coded Question Answer. may make it slightly more challenging based on success rate of blocking bots
-        } else if (
-          honeyPVal.value === "4" ||
-          (honeyPVal.value === 4 &&
-            inputtedEmail.includes("iamjmitch.com") === false &&
-            messageData.includes("iamjmitch") === false)
-        ) {
-          handleSend()
-        } else {
-          setFormText("Try Again")
-        }
+        contactForm.reset()
+        setTimeout(function () {
+          setFormText("An Error Has Occured")
+        }, 1000)
+        contactForm.reset()
+        setTimeout(function () {
+          setFormText("SEND")
+        }, 7000)
+      } else if (honeyPVal.value === "4" || honeyPVal.value === 4) {
+        handleSend()
+      } else {
+        setFormText("Try Again")
+      }
+    } else {
+      if (inputtedEmail.includes("iamjmitch")) {
+        setTimeout(function () {
+          setFormText("ERROR, TRY AGAIN LATER")
+        }, 2000)
       } else {
         handleSend()
       }
@@ -207,7 +219,6 @@ const ContactForm = props => {
           id="contactForm"
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name="subject" value="New Website Enquiry" />
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <div
