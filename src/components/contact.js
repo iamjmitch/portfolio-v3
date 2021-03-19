@@ -168,7 +168,7 @@ const ContactForm = props => {
         setIsBot(true)
         setFormText("Please Prove You Are Human")
         // currently hard coded Question Answer. may make it slightly more challenging based on success rate of blocking bots
-      } else if ((honeyPVal.value === "4" || honeyPVal.value === 4) && (inputtedEmail.includes("iamjmitch.com") === false) && (messageData.includes("iamjmitch") === false)) {
+      } else if (honeyPVal.value === "4" || honeyPVal.value === 4 && inputtedEmail.includes("iamjmitch.com") === false && messageData.includes("iamjmitch") === false) {
         handleSend()
       } else {
         setFormText("Try Again")
