@@ -168,7 +168,7 @@ const ContactForm = props => {
         setFormText("Please Prove You Are Human")
         // currently hard coded Question Answer. may make it slightly more challenging based on success rate of blocking bots
       } else if (
-        inputtedEmail.inlcude("iamjmitch.com") ||
+        inputtedEmail.include("iamjmitch.com") ||
         messageData.includes("iamjmitch")
       ) {
         contactForm.reset()
