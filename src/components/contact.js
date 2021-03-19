@@ -128,6 +128,7 @@ const ContactForm = props => {
     let contactForm = document.querySelector("#contactForm")
     //get value of the message textbox
     let messageData = document.querySelector("#message").value
+    //get value of the email input
     let inputtedEmail = document.querySelector("#email").value
     //get value of the honeypot question
     let honeyPVal = document.querySelector("#honey")
@@ -180,7 +181,7 @@ const ContactForm = props => {
       ) {
         //No form data sent
         setTimeout(function () {
-          setFormText("Probable Spam Warning")
+          setFormText("An Error Has Occured")
         }, 2000)
       } else {
         handleSend()
@@ -213,12 +214,7 @@ const ContactForm = props => {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="subject" value="New Website Enquiry" />
-          <input
-            type="hidden"
-            name="isSpam"
-            value={isBot ? "Probably" : "No"}
-          />
-
+          {isBot ? <input type="hidden" name="SPAM WARNING" /> : ""}
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <div
