@@ -128,6 +128,7 @@ const ContactForm = props => {
     let contactForm = document.querySelector("#contactForm")
     //get value of the message textbox
     let messageData = document.querySelector("#message").value
+    let inputtedEmail = document.querySelector("#email").value
     //get value of the honeypot question
     let honeyPVal = document.querySelector("#honey")
     const formData = new FormData(contactForm)
@@ -156,6 +157,7 @@ const ContactForm = props => {
 
     if (
       //if the message box contains any sort of link to a website, validation will fail and ask to prove if human. Capture Question is image
+
       messageData.includes("http") ||
       messageData.includes(".com") ||
       messageData.includes("www.")
@@ -171,7 +173,13 @@ const ContactForm = props => {
         setFormText("Try Again")
       }
     } else {
-      handleSend()
+      if (inputtedEmail.includes("iamjmitch")) {
+        setTimeout(function () {
+          setFormText("ERROR, TRY AGAIN LATER")
+        }, 2000)
+      } else {
+        handleSend()
+      }
     }
   }
 
