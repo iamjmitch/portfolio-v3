@@ -214,7 +214,6 @@ const ContactForm = props => {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="subject" value="New Website Enquiry" />
-          {isBot ? <input type="hidden" name="SPAM WARNING" /> : ""}
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <div
