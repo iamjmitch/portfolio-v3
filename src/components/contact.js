@@ -213,6 +213,7 @@ const ContactForm = props => {
         <form
           method="post"
           netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
           data-netlify="true"
           name="contact"
           action="/"
@@ -257,6 +258,7 @@ const ContactForm = props => {
               <SlideoutImage className="lazyload" data-src={slideOut} />
             </span>
           </div>
+          <div data-netlify-recaptcha="true"></div>
           <ul className="actions">
             {isBot && (
               <li>
