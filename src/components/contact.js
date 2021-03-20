@@ -1,3 +1,4 @@
+import { responsePathAsArray } from "graphql"
 import React, { useState } from "react"
 import styled from "styled-components"
 import slideOut from "../images/slide-out.png"
@@ -141,7 +142,7 @@ const ContactForm = props => {
           Accept: "application/x-www-form-urlencoded;charset=UTF-8",
           "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
         },
-        body: new URLSearchParams(formData).toString(),
+        body: new URLSearchParams(formData).toString(), g-recaptcha-response,
       }).then(res => {
         if (res) {
           setTimeout(function () {
