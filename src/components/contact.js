@@ -214,7 +214,6 @@ const ContactForm = props => {
         <form
           method="post"
           netlify-honeypot="bot-field"
-        
           data-netlify="true"
           name="contact"
           action="/"
@@ -258,7 +257,8 @@ const ContactForm = props => {
             <span>
               <SlideoutImage className="lazyload" data-src={slideOut} />
             </span>
-        73
+          </div>
+
           <ul className="actions">
             {isBot && (
               <li>
