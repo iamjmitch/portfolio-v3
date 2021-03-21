@@ -142,7 +142,7 @@ const ContactForm = props => {
           Accept: "application/x-www-form-urlencoded;charset=UTF-8",
           "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
         },
-        body: new URLSearchParams(formData).toString(), g-recaptcha-response,
+        body: new URLSearchParams(formData).toString(),
       }).then(res => {
         if (res) {
           setTimeout(function () {
@@ -169,7 +169,7 @@ const ContactForm = props => {
         setFormText("Please Prove You Are Human")
         // currently hard coded Question Answer. may make it slightly more challenging based on success rate of blocking bots
       } else if (
-        inputtedEmail.include("iamjmitch.com") ||
+        inputtedEmail.includes("iamjmitch.com") ||
         messageData.includes("iamjmitch")
       ) {
         contactForm.reset()
@@ -186,7 +186,7 @@ const ContactForm = props => {
         setFormText("Try Again")
       }
     } else {
-      if (inputtedEmail.includes("iamjmitch")) {
+      if (inputtedEmail.includes("iamjmitch.com")) {
         setTimeout(function () {
           setFormText("ERROR, TRY AGAIN LATER")
         }, 2000)
