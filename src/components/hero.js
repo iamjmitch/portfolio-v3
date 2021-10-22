@@ -107,7 +107,7 @@ const Hero = () => {
             MY NAME IS <b>JAMES</b>
           </h2>
           <h3>
-            I'M A JUNIOR <br className="mobileOnly" />
+            I'M A <br className="mobileOnly" />
             <b>FRONT-END DEVELOPER</b>
           </h3>
           <Link style={{ margin: "0 auto" }} to="/#works">
